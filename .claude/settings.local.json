@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(for file in analytics.html documents.html graph.html regulatory.html report.html)",
+      "Bash(do echo -n \"$file: \")",
+      "Bash(for file in portfolio.html supervisor.html analytics.html documents.html graph.html regulatory.html report.html)",
+      "Bash(do echo \"Checking $file...\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
