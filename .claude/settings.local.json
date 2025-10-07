@@ -5,7 +5,12 @@
       "Bash(for file in analytics.html documents.html graph.html regulatory.html report.html)",
       "Bash(do echo -n \"$file: \")",
       "Bash(for file in portfolio.html supervisor.html analytics.html documents.html graph.html regulatory.html report.html)",
-      "Bash(do echo \"Checking $file...\")"
+      "Bash(do echo \"Checking $file...\")",
+      "Bash(do)",
+      "Bash(if grep -q \"Vitality Bronze\" \"$file\")",
+      "Bash(then)",
+      "Bash(echo:*)",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []

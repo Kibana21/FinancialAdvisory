@@ -203,6 +203,317 @@
       font-size: 24px;
       flex-shrink: 0;
     }
+
+    /* Node Detail Modal */
+    .node-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .node-modal.active {
+      display: flex;
+    }
+
+    .node-modal-content {
+      background: white;
+      border-radius: var(--radius-xl);
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .node-modal-header {
+      padding: var(--space-xl);
+      border-bottom: 2px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    }
+
+    .node-modal-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-right: var(--space-md);
+      border: 3px solid;
+      flex-shrink: 0;
+    }
+
+    .node-modal-title {
+      flex: 1;
+    }
+
+    .node-modal-type {
+      font-size: var(--font-size-xs);
+      color: var(--gray-600);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .node-modal-name {
+      font-size: var(--font-size-xl);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin: 0;
+    }
+
+    .close-modal-btn {
+      background: none;
+      border: none;
+      font-size: 32px;
+      cursor: pointer;
+      color: var(--gray-400);
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .close-modal-btn:hover {
+      background: var(--gray-100);
+      color: var(--gray-900);
+    }
+
+    .node-modal-body {
+      padding: var(--space-xl);
+    }
+
+    .detail-row {
+      display: flex;
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .detail-label {
+      font-size: var(--font-size-sm);
+      font-weight: 600;
+      color: var(--gray-600);
+      width: 140px;
+      flex-shrink: 0;
+    }
+
+    .detail-value {
+      font-size: var(--font-size-sm);
+      color: var(--gray-900);
+      flex: 1;
+    }
+
+    .detail-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      font-weight: 600;
+    }
+
+    .detail-badge.success {
+      background: var(--success-bg);
+      color: var(--success-text);
+    }
+
+    .detail-badge.warning {
+      background: var(--warning-bg);
+      color: var(--warning-text);
+    }
+
+    .detail-badge.error {
+      background: var(--error-bg);
+      color: var(--error-text);
+    }
+
+    .violation-alert {
+      background: #FEF2F2;
+      border: 2px solid #FCA5A5;
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .violation-alert-title {
+      font-weight: 700;
+      color: #DC2626;
+      margin-bottom: var(--space-xs);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .violation-alert-desc {
+      font-size: var(--font-size-sm);
+      color: #7F1D1D;
+      line-height: 1.6;
+    }
+
+    /* Query Results Modal */
+    .query-result-card {
+      background: var(--gray-50);
+      border-left: 4px solid var(--aia-red);
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .query-result-header {
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: var(--space-xs);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .query-result-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--aia-red);
+      margin-top: 4px;
+    }
+
+    .query-result-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-md) 0 0 0;
+    }
+
+    .query-result-list li {
+      padding: var(--space-sm);
+      background: white;
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-xs);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: var(--font-size-sm);
+    }
+
+    .query-result-list li:hover {
+      background: var(--gray-50);
+    }
+
+    .query-step {
+      display: flex;
+      align-items: start;
+      gap: var(--space-md);
+      padding: var(--space-sm) 0;
+    }
+
+    .query-step-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--aia-red);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: var(--font-size-xs);
+      flex-shrink: 0;
+    }
+
+    .query-step-content {
+      flex: 1;
+      padding-top: 2px;
+    }
+
+    .query-step-title {
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 2px;
+    }
+
+    .query-step-desc {
+      font-size: var(--font-size-sm);
+      color: var(--gray-600);
+    }
+
+    .query-code {
+      background: #1E293B;
+      color: #E2E8F0;
+      padding: var(--space-md);
+      border-radius: var(--radius-md);
+      font-family: 'Courier New', monospace;
+      font-size: var(--font-size-xs);
+      margin: var(--space-md) 0;
+      overflow-x: auto;
+    }
+
+    .query-code-keyword {
+      color: #F472B6;
+    }
+
+    .query-code-string {
+      color: #86EFAC;
+    }
+
+    /* Node Status Indicators */
+    .node-status-icon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      pointer-events: none;
+    }
+
+    .node-status-success {
+      background: #10B981;
+      color: white;
+    }
+
+    .node-status-error {
+      background: #EF4444;
+      color: white;
+    }
+
+    .node-status-warning {
+      background: #F59E0B;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -260,7 +571,7 @@
     </ul>
     <div class="navbar-actions">
       <span class="text-gray">Agent: <strong>MAHADEVAN KARTIK</strong></span>
-      <span class="badge badge-info">Vitality Bronze</span>
+      
     </div>
   </nav>
 
@@ -351,6 +662,9 @@
           <text class="node-text" x="600" y="150">Tan Wei</text>
           <text class="node-text" x="600" y="163">Ming, 35</text>
           <text class="node-label" x="600" y="200">CLIENT</text>
+          <!-- Status indicator -->
+          <circle cx="625" cy="130" r="10" fill="#10B981"/>
+          <text x="625" y="134" text-anchor="middle" fill="white" font-size="10px" font-weight="700">✓</text>
         </g>
 
         <g class="node" onclick="selectNode('client2')">
@@ -359,6 +673,9 @@
           <text class="node-text" x="500" y="350">Lim Siew</text>
           <text class="node-text" x="500" y="363">Hong, 68</text>
           <text class="node-label" x="500" y="400">CLIENT</text>
+          <!-- Status indicator -->
+          <circle cx="525" cy="330" r="10" fill="#EF4444"/>
+          <text x="525" y="334" text-anchor="middle" fill="white" font-size="10px" font-weight="700">✗</text>
         </g>
 
         <g class="node" onclick="selectNode('client3')">
@@ -367,6 +684,9 @@
           <text class="node-text" x="700" y="480">Kumar</text>
           <text class="node-text" x="700" y="493">Rajesh, 42</text>
           <text class="node-label" x="700" y="530">CLIENT</text>
+          <!-- Status indicator -->
+          <circle cx="725" cy="460" r="10" fill="#F59E0B"/>
+          <text x="725" y="464" text-anchor="middle" fill="white" font-size="10px" font-weight="700">!</text>
         </g>
 
         <!-- Product Nodes -->
@@ -375,6 +695,9 @@
           <circle class="node-circle product" cx="350" cy="100" r="30"/>
           <text class="node-text" x="350" y="100">Term Life</text>
           <text class="node-label" x="350" y="140">PRODUCT</text>
+          <!-- Status indicator -->
+          <circle cx="372" cy="82" r="9" fill="#10B981"/>
+          <text x="372" y="86" text-anchor="middle" fill="white" font-size="9px" font-weight="700">✓</text>
         </g>
 
         <g class="node" onclick="selectNode('product2')">
@@ -382,6 +705,9 @@
           <circle class="node-circle product" cx="250" cy="350" r="30"/>
           <text class="node-text" x="250" y="350">ILP</text>
           <text class="node-label" x="250" y="390">PRODUCT</text>
+          <!-- Status indicator -->
+          <circle cx="272" cy="332" r="9" fill="#EF4444"/>
+          <text x="272" y="336" text-anchor="middle" fill="white" font-size="9px" font-weight="700">✗</text>
         </g>
 
         <g class="node" onclick="selectNode('product3')">
@@ -389,6 +715,9 @@
           <circle class="node-circle product" cx="450" cy="520" r="30"/>
           <text class="node-text" x="450" y="520">Whole Life</text>
           <text class="node-label" x="450" y="560">PRODUCT</text>
+          <!-- Status indicator -->
+          <circle cx="472" cy="502" r="9" fill="#F59E0B"/>
+          <text x="472" y="506" text-anchor="middle" fill="white" font-size="9px" font-weight="700">!</text>
         </g>
 
         <!-- Rule Nodes -->
@@ -398,6 +727,9 @@
           <text class="node-text" x="200" y="50" style="font-size: 10px;">Premium</text>
           <text class="node-text" x="200" y="62" style="font-size: 10px;">≤15%</text>
           <text class="node-label" x="200" y="85">RULE</text>
+          <!-- Status indicator -->
+          <circle cx="218" cy="34" r="8" fill="#10B981"/>
+          <text x="218" y="37" text-anchor="middle" fill="white" font-size="8px" font-weight="700">✓</text>
         </g>
 
         <g class="node" onclick="selectNode('rule2')">
@@ -406,6 +738,9 @@
           <text class="node-text" x="100" y="300" style="font-size: 10px;">Age >65</text>
           <text class="node-text" x="100" y="312" style="font-size: 10px;">No ILP</text>
           <text class="node-label" x="100" y="335">VIOLATION</text>
+          <!-- Status indicator -->
+          <circle cx="118" cy="284" r="8" fill="#EF4444"/>
+          <text x="118" y="287" text-anchor="middle" fill="white" font-size="8px" font-weight="700">✗</text>
         </g>
 
         <g class="node" onclick="selectNode('rule3')">
@@ -414,6 +749,9 @@
           <text class="node-text" x="300" y="570" style="font-size: 10px;">Emergency</text>
           <text class="node-text" x="300" y="582" style="font-size: 10px;">≥3mo</text>
           <text class="node-label" x="300" y="605">RULE</text>
+          <!-- Status indicator -->
+          <circle cx="318" cy="554" r="8" fill="#10B981"/>
+          <text x="318" y="557" text-anchor="middle" fill="white" font-size="8px" font-weight="700">✓</text>
         </g>
 
         <!-- Additional Agent Nodes -->
@@ -511,6 +849,44 @@
     </div>
   </div>
 
+  <!-- Node Detail Modal -->
+  <div class="node-modal" id="nodeModal">
+    <div class="node-modal-content">
+      <div class="node-modal-header">
+        <div style="display: flex; align-items: center;">
+          <div class="node-modal-icon" id="modalIcon"></div>
+          <div class="node-modal-title">
+            <div class="node-modal-type" id="modalType">Node Type</div>
+            <h2 class="node-modal-name" id="modalName">Node Name</h2>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeModal()">×</button>
+      </div>
+      <div class="node-modal-body" id="modalBody">
+        <!-- Content will be populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Query Results Modal -->
+  <div class="node-modal" id="queryModal">
+    <div class="node-modal-content" style="max-width: 800px;">
+      <div class="node-modal-header">
+        <div style="display: flex; align-items: center;">
+          <div class="node-modal-icon" style="border-color: var(--aia-red);">📊</div>
+          <div class="node-modal-title">
+            <div class="node-modal-type">Executing Graph Query</div>
+            <h2 class="node-modal-name" id="queryModalTitle">Query Results</h2>
+          </div>
+        </div>
+        <button class="close-modal-btn" onclick="closeQueryModal()">×</button>
+      </div>
+      <div class="node-modal-body" id="queryModalBody">
+        <!-- Content will be populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
   <script>
     function setQuery(queryText) {
       document.getElementById('queryInput').value = queryText;
@@ -518,42 +894,388 @@
 
     function executeQuery() {
       const query = document.getElementById('queryInput').value;
-      alert(`🔍 Executing Graph Query\n\n"${query}"\n\n📊 Results:\n\nIn a full implementation, this would:\n\n• Parse natural language query using NLP\n• Convert to Cypher query for Neo4j\n• Execute graph traversal\n• Return matching nodes and relationships\n• Update visualization with results\n• Generate insights from patterns\n\nExample Output:\n✓ Found 12 matching clients\n✓ Identified 3 compliance violations\n✓ Average premium ratio: 18.2%\n✓ Recommendation: Review cases #1247, #1289, #1304`);
+
+      if (!query.trim()) {
+        alert('Please enter a query');
+        return;
+      }
+
+      // Set query title
+      document.getElementById('queryModalTitle').textContent = `"${query}"`;
+
+      // Determine query type and generate appropriate results
+      const queryLower = query.toLowerCase();
+      let html = '';
+
+      // Results Summary
+      html += '<div style="margin-bottom: var(--space-xl);">';
+      html += '<h4 style="margin-bottom: var(--space-md); color: var(--gray-900);">📊 Query Results</h4>';
+
+      if (queryLower.includes('55-65') || queryLower.includes('aged 55')) {
+        // Senior clients query
+        html += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-bottom: var(--space-lg);">';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">✓ Matching Clients</div>';
+        html += '<div class="query-result-value">8</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">📋 Total Recommendations</div>';
+        html += '<div class="query-result-value">8</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">⚠️ Compliance Issues</div>';
+        html += '<div class="query-result-value">2</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">⏱️ Query Time</div>';
+        html += '<div class="query-result-value">89ms</div>';
+        html += '</div>';
+        html += '</div>';
+
+        // Client list
+        html += '<div style="background: white; border: 2px solid var(--gray-200); border-radius: var(--radius-md); padding: var(--space-lg); margin-bottom: var(--space-md);">';
+        html += '<div style="font-weight: 700; color: var(--gray-900); margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-sm);">';
+        html += '👥 Clients Aged 55-65 (Last Quarter)';
+        html += '</div>';
+        html += '<ul class="query-result-list">';
+        html += '<li><span><strong>Wong Mei Ling</strong> (58) - Term Life $450/month</span><span class="detail-badge success">Compliant</span></li>';
+        html += '<li><span><strong>Tan Boon Huat</strong> (62) - Whole Life $800/month</span><span class="detail-badge success">Compliant</span></li>';
+        html += '<li><span><strong>Lee Siew Eng</strong> (56) - CI Rider $320/month</span><span class="detail-badge success">Compliant</span></li>';
+        html += '<li><span><strong>Kumar Suppiah</strong> (61) - RetireSecure $600/month</span><span class="detail-badge success">Compliant</span></li>';
+        html += '<li><span><strong>Chen Hui Min</strong> (59) - Term Life $550/month</span><span class="detail-badge success">Compliant</span></li>';
+        html += '<li><span><strong>Ng Ah Lian</strong> (64) - Whole Life $720/month</span><span class="detail-badge success">Compliant</span></li>';
+        html += '<li><span><strong>David Tan</strong> (57) - ILP $500/month</span><span class="detail-badge warning">Review needed</span></li>';
+        html += '<li><span><strong>Mary Goh</strong> (63) - Investment Plan $650/month</span><span class="detail-badge warning">High premium ratio</span></li>';
+        html += '</ul>';
+        html += '</div>';
+
+      } else if (queryLower.includes('violation') || queryLower.includes('repeatedly')) {
+        // Agents with violations
+        html += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-bottom: var(--space-lg);">';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">⚠️ Agents Flagged</div>';
+        html += '<div class="query-result-value">3</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">📊 Total Violations</div>';
+        html += '<div class="query-result-value">18</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">🚨 Critical Cases</div>';
+        html += '<div class="query-result-value">5</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">⏱️ Query Time</div>';
+        html += '<div class="query-result-value">142ms</div>';
+        html += '</div>';
+        html += '</div>';
+
+        html += '<div style="background: #FEF2F2; border: 2px solid #FCA5A5; border-radius: var(--radius-md); padding: var(--space-lg);">';
+        html += '<div style="font-weight: 700; color: #DC2626; margin-bottom: var(--space-md);">🚨 Agents with Repeated Affordability Violations</div>';
+        html += '<ul class="query-result-list">';
+        html += '<li><span><strong>Agent: John Tan</strong> - 8 violations (6 months)</span><span class="detail-badge error">Action Required</span></li>';
+        html += '<li><span><strong>Agent: Sarah Lim</strong> - 6 violations (6 months)</span><span class="detail-badge error">Training Needed</span></li>';
+        html += '<li><span><strong>Agent: Michael Wong</strong> - 4 violations (6 months)</span><span class="detail-badge warning">Monitor</span></li>';
+        html += '</ul>';
+        html += '<div style="margin-top: var(--space-md); padding-top: var(--space-md); border-top: 1px solid #FCA5A5; font-size: var(--font-size-sm); color: #7F1D1D);">';
+        html += '<strong>Common Pattern:</strong> Premium ratios exceeding 35% of client income, insufficient emergency fund validation';
+        html += '</div>';
+        html += '</div>';
+
+      } else if (queryLower.includes('>35') || queryLower.includes('premium ratio')) {
+        // High premium ratio
+        html += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-bottom: var(--space-lg);">';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">🔍 Matching Clients</div>';
+        html += '<div class="query-result-value">12</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">📊 Avg Ratio</div>';
+        html += '<div class="query-result-value">41.2%</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">⚠️ All Non-Compliant</div>';
+        html += '<div class="query-result-value">12</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">⏱️ Query Time</div>';
+        html += '<div class="query-result-value">76ms</div>';
+        html += '</div>';
+        html += '</div>';
+
+        html += '<div style="background: #FEF2F2; border: 2px solid #FCA5A5; border-radius: var(--radius-md); padding: var(--space-lg);">';
+        html += '<div style="font-weight: 700; color: #DC2626; margin-bottom: var(--space-md);">🚨 Clients with Premium Ratio >35%</div>';
+        html += '<ul class="query-result-list">';
+        html += '<li><span><strong>FHR-2025-1247</strong> - Lim Ah Seng (45) - $1,800 premium</span><span class="detail-badge error">Ratio: 42.3%</span></li>';
+        html += '<li><span><strong>FHR-2025-1289</strong> - Chen Wei Ling (38) - $1,400 premium</span><span class="detail-badge error">Ratio: 38.9%</span></li>';
+        html += '<li><span><strong>FHR-2025-1304</strong> - Kumar Raj (52) - $2,100 premium</span><span class="detail-badge error">Ratio: 46.7%</span></li>';
+        html += '<li><span><strong>FHR-2025-1312</strong> - Wong Mei Fang (41) - $1,650 premium</span><span class="detail-badge error">Ratio: 39.5%</span></li>';
+        html += '<li><span><strong>FHR-2025-1356</strong> - Tan Boon Kiat (48) - $1,950 premium</span><span class="detail-badge error">Ratio: 43.8%</span></li>';
+        html += '</ul>';
+        html += '<div style="margin-top: var(--space-sm); font-size: var(--font-size-sm); color: #7F1D1D;">...and 7 more cases</div>';
+        html += '</div>';
+
+      } else {
+        // Default generic results
+        html += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-bottom: var(--space-lg);">';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">✓ Matching Results</div>';
+        html += '<div class="query-result-value">15</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">⚠️ Issues Found</div>';
+        html += '<div class="query-result-value">4</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">📊 Data Points</div>';
+        html += '<div class="query-result-value">87</div>';
+        html += '</div>';
+        html += '<div class="query-result-card">';
+        html += '<div class="query-result-header">⏱️ Query Time</div>';
+        html += '<div class="query-result-value">124ms</div>';
+        html += '</div>';
+        html += '</div>';
+
+        html += '<div style="background: var(--info-bg); border: 2px solid var(--info-border); border-radius: var(--radius-md); padding: var(--space-lg);">';
+        html += '<div style="font-weight: 700; color: var(--info-text); margin-bottom: var(--space-sm);">💡 Query Results</div>';
+        html += '<p style="margin: 0; font-size: var(--font-size-sm); color: var(--gray-700);">Query executed successfully. In a full implementation, this would show detailed results based on your specific query parameters.</p>';
+        html += '</div>';
+      }
+
+      html += '</div>';
+
+      // Set content and show modal
+      document.getElementById('queryModalBody').innerHTML = html;
+      document.getElementById('queryModal').classList.add('active');
     }
+
+    function closeQueryModal() {
+      document.getElementById('queryModal').classList.remove('active');
+    }
+
+    // Close query modal on background click
+    document.getElementById('queryModal').addEventListener('click', (e) => {
+      if (e.target.id === 'queryModal') {
+        closeQueryModal();
+      }
+    });
 
     function selectNode(nodeId) {
       const nodeData = {
         'agent1': {
           type: 'Agent',
+          icon: '👤',
+          iconColor: '#8B5CF6',
           name: 'Mahadevan Kartik',
-          details: 'ID: AIA-SG-0012\nProposals: 47\nApproval Rate: 78%\nCompliance Score: 87/100\nViolations: 2 (last 30 days)'
+          fields: [
+            { label: 'Agent ID', value: 'AIA-SG-0012' },
+            { label: 'Total Proposals', value: '47' },
+            { label: 'Approval Rate', value: '78%' },
+            { label: 'Compliance Score', value: '<span class="detail-badge warning">87/100</span>' },
+            { label: 'Violations (30d)', value: '<span class="detail-badge error">2 violations</span>' }
+          ]
         },
         'client1': {
           type: 'Client',
+          icon: '👨',
+          iconColor: '#3B82F6',
           name: 'Tan Wei Ming',
-          details: 'Age: 35\nIncome: $4,500/month\nRecommendation: Term Life $650/month\nCompliance: ✓ All checks passed\nApproval: Pending'
+          fields: [
+            { label: 'Age', value: '35' },
+            { label: 'Income', value: '$4,500/month' },
+            { label: 'Recommendation', value: 'Term Life $650/month' },
+            { label: 'Compliance', value: '<span class="detail-badge success">✓ All checks passed</span>' },
+            { label: 'Approval Status', value: '<span class="detail-badge warning">Pending</span>' }
+          ]
         },
         'client2': {
           type: 'Client',
+          icon: '👵',
+          iconColor: '#3B82F6',
           name: 'Lim Siew Hong',
-          details: 'Age: 68\nIncome: $2,800/month\nRecommendation: ILP $600/month\n⚠️ VIOLATION: ILP not suitable for age 68\nStatus: Rejected by supervisor'
+          fields: [
+            { label: 'Age', value: '68' },
+            { label: 'Income', value: '$2,800/month' },
+            { label: 'Recommendation', value: 'ILP $600/month' },
+            { label: 'Status', value: '<span class="detail-badge error">Rejected by supervisor</span>' }
+          ],
+          violation: {
+            title: '⚠️ Compliance Violation Detected',
+            desc: 'ILP not suitable for age 68. MAS guidelines prohibit high-risk investment products for clients aged 65 and above.'
+          }
         },
         'product2': {
           type: 'Product',
+          icon: '📊',
+          iconColor: '#10B981',
           name: 'Investment-Linked Policy',
-          details: 'Category: Investment\nRisk Level: High\nMin Age: 21\nMax Recommended Age: 65\n⚠️ Age restriction violated in this case'
+          fields: [
+            { label: 'Category', value: 'Investment' },
+            { label: 'Risk Level', value: '<span class="detail-badge error">High</span>' },
+            { label: 'Min Age', value: '21' },
+            { label: 'Max Recommended Age', value: '65' }
+          ],
+          violation: {
+            title: '⚠️ Age Restriction Violated',
+            desc: 'This product was recommended to a client aged 68, exceeding the maximum recommended age of 65 years.'
+          }
         },
         'rule2': {
           type: 'Compliance Rule',
+          icon: '⚠️',
+          iconColor: '#EF4444',
           name: 'Age Appropriateness for ILP',
-          details: 'Rule ID: MAS-302-ILP-AGE\nDescription: ILP not recommended for clients >65\nSource: MAS Guidelines\nEnforcement: Hard Stop\nViolations (30d): 3 across all agents'
+          fields: [
+            { label: 'Rule ID', value: 'MAS-302-ILP-AGE' },
+            { label: 'Description', value: 'ILP not recommended for clients >65' },
+            { label: 'Source', value: 'MAS Guidelines' },
+            { label: 'Enforcement', value: '<span class="detail-badge error">Hard Stop</span>' },
+            { label: 'Violations (30d)', value: '<span class="detail-badge error">3 across all agents</span>' }
+          ]
+        },
+        'client3': {
+          type: 'Client',
+          icon: '👨',
+          iconColor: '#3B82F6',
+          name: 'Kumar Rajesh',
+          fields: [
+            { label: 'Age', value: '42' },
+            { label: 'Income', value: '$6,000/month' },
+            { label: 'Dependents', value: '3 children + 2 elderly parents' },
+            { label: 'Recommendation', value: 'Whole Life $1,200/month' },
+            { label: 'Compliance', value: '<span class="detail-badge warning">Needs Review</span>' },
+            { label: 'Approval Status', value: '<span class="detail-badge warning">Pending</span>' }
+          ]
+        },
+        'product1': {
+          type: 'Product',
+          icon: '🛡️',
+          iconColor: '#10B981',
+          name: 'Term Life Insurance',
+          fields: [
+            { label: 'Category', value: 'Protection' },
+            { label: 'Risk Level', value: '<span class="detail-badge success">Low</span>' },
+            { label: 'Recommended Age', value: '21-60' },
+            { label: 'Average Premium', value: '$450/month' },
+            { label: 'Approval Rate', value: '<span class="detail-badge success">96%</span>' }
+          ]
+        },
+        'product3': {
+          type: 'Product',
+          icon: '💰',
+          iconColor: '#10B981',
+          name: 'Whole Life Insurance',
+          fields: [
+            { label: 'Category', value: 'Protection + Savings' },
+            { label: 'Risk Level', value: '<span class="detail-badge success">Low</span>' },
+            { label: 'Recommended Age', value: '21-55' },
+            { label: 'Cash Value', value: 'Yes (accumulates over time)' },
+            { label: 'Approval Rate', value: '<span class="detail-badge success">89%</span>' }
+          ]
+        },
+        'rule1': {
+          type: 'Compliance Rule',
+          icon: '✓',
+          iconColor: '#F59E0B',
+          name: 'Premium Affordability',
+          fields: [
+            { label: 'Rule ID', value: 'MS-101-PREMIUM' },
+            { label: 'Description', value: 'Premium ≤15% of monthly income' },
+            { label: 'Source', value: 'MoneySense Guidelines' },
+            { label: 'Enforcement', value: '<span class="detail-badge warning">Warning</span>' },
+            { label: 'Compliance Rate', value: '<span class="detail-badge success">92%</span>' }
+          ]
+        },
+        'rule3': {
+          type: 'Compliance Rule',
+          icon: '✓',
+          iconColor: '#F59E0B',
+          name: 'Emergency Fund Requirement',
+          fields: [
+            { label: 'Rule ID', value: 'MS-103-EFUND' },
+            { label: 'Description', value: 'Emergency fund ≥3 months expenses' },
+            { label: 'Source', value: 'MoneySense Guidelines' },
+            { label: 'Enforcement', value: '<span class="detail-badge warning">Warning</span>' },
+            { label: 'Compliance Rate', value: '<span class="detail-badge success">87%</span>' }
+          ]
+        },
+        'supervisor': {
+          type: 'Supervisor',
+          icon: '👩‍💼',
+          iconColor: '#8B5CF6',
+          name: 'Sarah Chen',
+          fields: [
+            { label: 'Role', value: 'Team Manager' },
+            { label: 'Team Size', value: '12 agents' },
+            { label: 'Proposals Reviewed', value: '284 (this month)' },
+            { label: 'Approval Rate', value: '<span class="detail-badge success">91%</span>' },
+            { label: 'Avg Review Time', value: '18 minutes' }
+          ]
+        },
+        'peer': {
+          type: 'Agent',
+          icon: '👤',
+          iconColor: '#8B5CF6',
+          name: 'John Tan',
+          fields: [
+            { label: 'Agent ID', value: 'AIA-SG-0089' },
+            { label: 'Total Proposals', value: '52' },
+            { label: 'Approval Rate', value: '<span class="detail-badge success">96%</span>' },
+            { label: 'Compliance Score', value: '<span class="detail-badge success">96/100</span>' },
+            { label: 'Violations (30d)', value: '<span class="detail-badge success">0 violations</span>' }
+          ]
         }
       };
 
-      const data = nodeData[nodeId] || { type: 'Node', name: 'Unknown', details: 'No details available' };
+      const data = nodeData[nodeId];
+      if (!data) return;
 
-      alert(`🔍 Node Details\n\nType: ${data.type}\nName: ${data.name}\n\n${data.details}\n\n[In full implementation, this would show:\n• Complete relationship map\n• Historical data\n• Compliance timeline\n• Related violations\n• Recommended actions]`);
+      // Update modal header
+      document.getElementById('modalType').textContent = data.type;
+      document.getElementById('modalName').textContent = data.name;
+
+      const iconEl = document.getElementById('modalIcon');
+      iconEl.textContent = data.icon;
+      iconEl.style.borderColor = data.iconColor;
+
+      // Build modal body
+      let html = '<div>';
+
+      data.fields.forEach(field => {
+        html += `
+          <div class="detail-row">
+            <div class="detail-label">${field.label}:</div>
+            <div class="detail-value">${field.value}</div>
+          </div>
+        `;
+      });
+
+      if (data.violation) {
+        html += `
+          <div class="violation-alert">
+            <div class="violation-alert-title">${data.violation.title}</div>
+            <div class="violation-alert-desc">${data.violation.desc}</div>
+          </div>
+        `;
+      }
+
+      html += '</div>';
+      document.getElementById('modalBody').innerHTML = html;
+
+      // Show modal
+      document.getElementById('nodeModal').classList.add('active');
     }
+
+    function closeModal() {
+      document.getElementById('nodeModal').classList.remove('active');
+    }
+
+    // Close modal on background click
+    document.getElementById('nodeModal').addEventListener('click', (e) => {
+      if (e.target.id === 'nodeModal') {
+        closeModal();
+      }
+    });
 
     // Animate nodes on load
     window.addEventListener('load', () => {
@@ -569,5 +1291,13 @@
       });
     });
   </script>
+  <!-- Floating Chat Widget -->
+  <div class="chat-widget">
+    <button class="chat-widget-button" onclick="window.location.href='copilot.html'" title="Ask AI Copilot">
+      💬
+    </button>
+    <div class="chat-widget-tooltip">Ask AI Copilot</div>
+  </div>
+
 </body>
 </html>
