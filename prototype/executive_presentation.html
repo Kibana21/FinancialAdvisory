@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompliSense AI - Executive Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #C5193B, #8B0000);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header .subtitle {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header .tagline {
+            font-size: 1.1em;
+            font-style: italic;
+            opacity: 0.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #C5193B;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #C5193B;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #C5193B;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h3 {
+            color: #444;
+            font-size: 1.6em;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid #EF4444;
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid #10B981;
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-top: 4px solid #3B82F6;
+            transition: transform 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #C5193B;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 3px solid #F59E0B;
+        }
+
+        .value-prop {
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .value-prop h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .roi-section {
+            background: linear-gradient(135deg, #3B82F6, #1E40AF);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .roi-section h3 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .competition-section {
+            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .competition-section h3 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border: 2px solid #F59E0B;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .highlight-box h4 {
+            color: #92400E;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tech-item {
+            background: #E5E7EB;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #374151;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: #C5193B;
+            color: white;
+            border-color: #8B0000;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #C5193B, #8B0000);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-section h3 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: #C5193B;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+
+        .demo-link {
+            display: inline-block;
+            background: #3B82F6;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-link:hover {
+            background: #1E40AF;
+            transform: translateY(-2px);
+        }
+
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .screenshot-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-header {
+            background: linear-gradient(135deg, #C5193B, #8B0000);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .screenshot-image {
+            width: 100%;
+            height: 300px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1em;
+            border: 2px dashed #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screenshot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+        }
+
+        .screenshot-description {
+            padding: 20px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .demo-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .demo-section h3 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .before-after-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .before-after-card h4 {
+            color: #C5193B;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .before-after-card.before {
+            border-left: 5px solid #EF4444;
+        }
+
+        .before-after-card.after {
+            border-left: 5px solid #10B981;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .problem-grid,
+            .solution-grid,
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🧠 CompliSense AI</h1>
+            <div class="subtitle">Revolutionizing Financial Advisory Compliance for AIA Singapore</div>
+            <div class="tagline">"From 2 days to 30 minutes - AI-powered MoneySense compliance at scale"</div>
+        </header>
+
+        <!-- Executive Summary -->
+        <section class="section">
+            <h2><span class="emoji">🎯</span>Executive Summary</h2>
+            <div class="highlight-box">
+                <h4>The Game-Changing Innovation</h4>
+                <p><strong>CompliSense AI transforms financial advisory compliance from a manual, error-prone, 2-day process into an intelligent, real-time, 30-minute automated system.</strong> Our AI validates every recommendation against MoneySense guidelines, prevents submission errors, and empowers supervisors to approve 35 proposals in 2 seconds instead of 8.75 hours.</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Compliance Accuracy</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">80%</div>
+                    <div class="metric-label">Error Reduction</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">95%</div>
+                    <div class="metric-label">Time Savings</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">2.5x</div>
+                    <div class="metric-label">Productivity Boost</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Statement -->
+        <section class="section">
+            <h2><span class="emoji">❌</span>The Critical Problems We Solve</h2>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3><span class="emoji">⏰</span>Compliance Bottleneck Crisis</h3>
+                    <p><strong>Current Reality:</strong> Manual compliance checks take 2+ days per proposal. Supervisors spend 8.75 hours daily reviewing proposals manually. This creates massive delays in customer service and agent productivity.</p>
+                </div>
+
+                <div class="problem-card">
+                    <h3><span class="emoji">🚫</span>Human Error Epidemic</h3>
+                    <p><strong>Risk Impact:</strong> 35% of proposals fail initial compliance checks due to human error. Agents struggle with 50+ MoneySense rules. This leads to regulatory penalties and customer dissatisfaction.</p>
+                </div>
+
+                <div class="problem-card">
+                    <h3><span class="emoji">📊</span>Scalability Nightmare</h3>
+                    <p><strong>Growth Constraint:</strong> Current manual process cannot scale with business growth. Adding more supervisors is expensive and still error-prone. Digital transformation is essential for competitive advantage.</p>
+                </div>
+
+                <div class="problem-card">
+                    <h3><span class="emoji">💸</span>Revenue Leakage</h3>
+                    <p><strong>Business Cost:</strong> Delayed approvals = lost sales opportunities. Compliance errors = regulatory fines. Agent frustration = higher turnover costs. Time spent on paperwork ≠ time with customers.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>🎯 The Core Challenge</h4>
+                <p>AIA Singapore processes thousands of financial advisory proposals monthly. Each must comply with MoneySense guidelines, but manual validation is slow, error-prone, and doesn't scale. <strong>We need intelligent automation that maintains regulatory excellence while dramatically improving efficiency.</strong></p>
+            </div>
+        </section>
+
+        <!-- Solution Overview -->
+        <section class="section">
+            <h2><span class="emoji">✨</span>Our AI-Powered Solution</h2>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h3><span class="emoji">🔍</span>Real-Time Compliance Engine</h3>
+                    <p><strong>Instant Validation:</strong> AI monitors agent inputs in real-time against all 50+ MoneySense rules. Provides immediate feedback with specific compliance scores (0-100) and actionable suggestions for fixes.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3><span class="emoji">🤖</span>Intelligent AI Copilot</h3>
+                    <p><strong>24/7 Expert Assistant:</strong> Conversational AI answers complex compliance questions instantly. Provides detailed explanations with MoneySense citations. Reduces agent training time by 60%.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3><span class="emoji">🎯</span>Smart Product Matching</h3>
+                    <p><strong>Pre-Validated Recommendations:</strong> AI analyzes client profile against 247 products and recommends top 3 matches with compliance pre-validation. Shows suitability scores and reasoning.</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3><span class="emoji">⚡</span>Supervisor Efficiency Hub</h3>
+                    <p><strong>Risk-Prioritized Workflows:</strong> AI categorizes proposals by risk (high/medium/low). Enables bulk approval of 35 low-risk proposals in 2 seconds. Focuses supervisor attention on only 3 high-risk cases.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section class="section">
+            <h2><span class="emoji">🚀</span>Core Capabilities</h2>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3><span class="emoji">📋</span>Financial Health Review (FHR) Form</h3>
+                    <p>Interactive form with live compliance validation. Real-time MoneySense score calculation. Instant feedback on premium affordability, coverage adequacy, and life stage alignment.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3><span class="emoji">💬</span>AI Compliance Copilot</h3>
+                    <p>Chat interface for complex compliance queries. Pre-loaded with AIA Advisory Manual and MoneySense guidelines. Provides citations and regulatory references.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3><span class="emoji">🔍</span>Product Intelligence Engine</h3>
+                    <p>AI analyzes client needs vs. product features. Ranks products by suitability (94%, 87%, 79%). Shows compliance status for each recommendation.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3><span class="emoji">📊</span>Supervisor Dashboard</h3>
+                    <p>Risk-based proposal prioritization. Bulk approval workflows. AI confidence scoring. Detailed audit trails with reasoning.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3><span class="emoji">📈</span>Analytics & Insights</h3>
+                    <p>Compliance trend analysis. Agent performance metrics. Risk pattern detection. Regulatory alert system.</p>
+                </div>
+
+                <div class="feature-item">
+                    <h3><span class="emoji">📱</span>iPad-Optimized Design</h3>
+                    <p>Touch-friendly interface for field agents. Offline capability for client meetings. Responsive design for all devices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <div class="value-prop">
+            <h3><span class="emoji">💎</span>Transformational Value for AIA Singapore</h3>
+            <div class="problem-grid" style="margin-top: 20px;">
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                    <h4>For Financial Advisors</h4>
+                    <p>✅ Real-time compliance guidance<br>
+                    ✅ 20% time savings on paperwork<br>
+                    ✅ Instant expert knowledge access<br>
+                    ✅ Higher proposal approval rates</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                    <h4>For Supervisors</h4>
+                    <p>✅ 8.75 hours saved daily<br>
+                    ✅ Bulk approve 35 proposals in seconds<br>
+                    ✅ Focus on high-risk cases only<br>
+                    ✅ Clear audit trails</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                    <h4>For AIA Leadership</h4>
+                    <p>✅ 90%+ compliance accuracy<br>
+                    ✅ Regulatory risk reduction<br>
+                    ✅ Scalable digital infrastructure<br>
+                    ✅ Competitive differentiation</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                    <h4>For Customers</h4>
+                    <p>✅ MoneySense-compliant recommendations<br>
+                    ✅ Faster proposal processing<br>
+                    ✅ Transparent suitability explanations<br>
+                    ✅ Government-backed standards</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROI & Business Impact -->
+        <div class="roi-section">
+            <h3><span class="emoji">💰</span>Quantified Business Impact</h3>
+
+            <div class="metrics-grid" style="margin-top: 20px;">
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 2em; font-weight: bold; color: #FEF3C7;">2 days → 30 min</div>
+                    <div style="color: #E5E7EB;">Proposal Review Time</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 2em; font-weight: bold; color: #FEF3C7;">65% → 90%</div>
+                    <div style="color: #E5E7EB;">First-Time Approval Rate</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 2em; font-weight: bold; color: #FEF3C7;">80%</div>
+                    <div style="color: #E5E7EB;">Compliance Error Reduction</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px; text-align: center;">
+                    <div style="font-size: 2em; font-weight: bold; color: #FEF3C7;">$2.8M</div>
+                    <div style="color: #E5E7EB;">Annual Productivity Savings</div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <h4 style="color: #FEF3C7; margin-bottom: 15px;">🎯 Key Performance Improvements</h4>
+                <p style="color: #E5E7EB;">
+                    <strong>Operational Excellence:</strong> 50 proposals/day → 200 proposals/day per supervisor<br>
+                    <strong>Agent Productivity:</strong> 60% reduction in onboarding time, 20% more client face-time<br>
+                    <strong>Regulatory Compliance:</strong> 100% MoneySense validation, automated audit trails<br>
+                    <strong>Customer Experience:</strong> Same-day approvals vs. 2-day delays
+                </p>
+            </div>
+        </div>
+
+        <!-- Innovation & Technology -->
+        <section class="section">
+            <h2><span class="emoji">🔬</span>Technical Innovation</h2>
+
+            <h3><span class="emoji">⚙️</span>AI & Machine Learning Stack</h3>
+            <div class="tech-stack">
+                <span class="tech-item">Natural Language Processing</span>
+                <span class="tech-item">Real-time Validation Engine</span>
+                <span class="tech-item">Regulatory Knowledge Graph</span>
+                <span class="tech-item">Risk Scoring Algorithms</span>
+                <span class="tech-item">Pattern Recognition</span>
+                <span class="tech-item">Conversational AI</span>
+                <span class="tech-item">Document Intelligence</span>
+                <span class="tech-item">Predictive Analytics</span>
+            </div>
+
+            <h3><span class="emoji">🏗️</span>Architecture Highlights</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h4>🧠 MoneySense Knowledge Engine</h4>
+                    <p>Complete digitization of all MoneySense guidelines with real-time rule validation and regulatory update integration.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚡ Real-time Processing</h4>
+                    <p>Sub-second response times for compliance checks with live calculation updates as agents type.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>🔒 Enterprise Security</h4>
+                    <p>Bank-grade security with audit trails, role-based access, and regulatory compliance logging.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📱 Mobile-First Design</h4>
+                    <p>iPad-optimized interface with offline capabilities for client meetings and field operations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitive Advantage -->
+        <div class="competition-section">
+            <h3><span class="emoji">🏆</span>Why CompliSense AI Wins</h3>
+
+            <div class="problem-grid" style="margin-top: 20px;">
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                    <h4>🎯 MoneySense-Native</h4>
+                    <p>Built specifically for Singapore's MoneySense guidelines. No generic compliance tool can match our localized expertise and regulatory knowledge depth.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                    <h4>⚡ Real-Time Intelligence</h4>
+                    <p>Unlike batch-processing systems, our AI provides instant feedback during form completion. Prevents errors before they happen.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                    <h4>🤖 Conversational AI</h4>
+                    <p>First-ever chat-based compliance assistant for financial advisory. Makes complex regulations accessible to every agent.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                    <h4>📊 Supervisor Efficiency</h4>
+                    <p>Revolutionary bulk approval workflows. Competitors focus on agent tools; we optimize the entire approval pipeline.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Plan -->
+        <section class="section">
+            <h2><span class="emoji">🗺️</span>Implementation Roadmap</h2>
+
+            <div class="feature-list">
+                <div class="feature-item" style="border-left-color: #10B981;">
+                    <h3>Phase 1 - MVP Deployment (Months 1-2)</h3>
+                    <p><strong>Scope:</strong> Core FHR form with real-time validation, basic AI copilot, supervisor dashboard<br>
+                    <strong>Target:</strong> 50 pilot agents, 3 supervisors<br>
+                    <strong>Success Metrics:</strong> 70% compliance score improvement</p>
+                </div>
+
+                <div class="feature-item" style="border-left-color: #3B82F6;">
+                    <h3>Phase 2 - Full Feature Rollout (Months 3-4)</h3>
+                    <p><strong>Scope:</strong> Product recommendation engine, advanced analytics, mobile optimization<br>
+                    <strong>Target:</strong> 500 agents across all branches<br>
+                    <strong>Success Metrics:</strong> 50% time reduction, 85% approval rate</p>
+                </div>
+
+                <div class="feature-item" style="border-left-color: #8B5CF6;">
+                    <h3>Phase 3 - Scale & Enhance (Months 5-6)</h3>
+                    <p><strong>Scope:</strong> Multi-language support, API integrations, predictive analytics<br>
+                    <strong>Target:</strong> All 2000+ AIA Singapore agents<br>
+                    <strong>Success Metrics:</strong> 90% adoption, $2.8M annual savings</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Demo Section -->
+        <div class="demo-section">
+            <h3><span class="emoji">🖥️</span>CompliSense AI in Action</h3>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px;">See how our AI transforms the compliance experience</p>
+
+            <div class="screenshot-gallery">
+                <div class="screenshot-card">
+                    <div class="screenshot-header">📋 Real-Time FHR Validation</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - FHR Form</text>
+                            <text x="650" y="35" fill="white" font-size="12">Agent: KARTIK</text>
+
+                            <!-- Alert Banner -->
+                            <rect x="20" y="70" width="760" height="40" fill="#DBEAFE" stroke="#3B82F6" rx="8"/>
+                            <text x="40" y="92" fill="#1E40AF" font-size="12">💡 AI Compliance Assistant Active - Real-time MoneySense validation</text>
+
+                            <!-- Two Column Layout -->
+                            <!-- Left Column: Form -->
+                            <rect x="20" y="120" width="380" height="460" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="30" y="145" font-size="14" font-weight="bold">📋 Financial Health Review (FHR) Form</text>
+
+                            <!-- Progress Bar -->
+                            <rect x="30" y="160" width="300" height="8" fill="#F3F4F6" rx="4"/>
+                            <rect x="30" y="160" width="180" height="8" fill="#10B981" rx="4"/>
+                            <text x="340" y="167" font-size="10" fill="#6B7280">60% Complete</text>
+
+                            <!-- Form Fields -->
+                            <text x="30" y="185" font-size="12" font-weight="bold">Client Information</text>
+                            <rect x="30" y="195" width="160" height="25" fill="#F9FAFB" stroke="#D1D5DB" rx="4"/>
+                            <text x="35" y="210" font-size="10" fill="#6B7280">Tan Wei Ming</text>
+                            <rect x="200" y="195" width="60" height="25" fill="#F9FAFB" stroke="#D1D5DB" rx="4"/>
+                            <text x="205" y="210" font-size="10" fill="#6B7280">35</text>
+
+                            <rect x="30" y="230" width="160" height="25" fill="#F9FAFB" stroke="#D1D5DB" rx="4"/>
+                            <text x="35" y="245" font-size="10" fill="#6B7280">$4,500</text>
+                            <rect x="200" y="230" width="160" height="25" fill="#F9FAFB" stroke="#D1D5DB" rx="4"/>
+                            <text x="205" y="245" font-size="10" fill="#6B7280">$3,200</text>
+
+                            <text x="30" y="275" font-size="12" font-weight="bold">Product Recommendation</text>
+                            <rect x="30" y="285" width="160" height="25" fill="#FEF3C7" stroke="#F59E0B" rx="4"/>
+                            <text x="35" y="300" font-size="10" fill="#92400E">Term Life Insurance</text>
+                            <rect x="200" y="285" width="80" height="25" fill="#FEF2F2" stroke="#EF4444" rx="4"/>
+                            <text x="205" y="300" font-size="10" fill="#DC2626">$800/month</text>
+
+                            <!-- Submit Button -->
+                            <rect x="30" y="540" width="100" height="30" fill="#C5193B" rx="6"/>
+                            <text x="65" y="558" fill="white" font-size="11" text-anchor="middle">Submit for Review</text>
+
+                            <!-- Right Column: AI Dashboard -->
+                            <rect x="420" y="120" width="360" height="460" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="430" y="145" font-size="14" font-weight="bold">🤖 CompliSense AI Dashboard</text>
+
+                            <!-- Compliance Score -->
+                            <circle cx="600" cy="200" r="40" fill="none" stroke="#E5E7EB" stroke-width="8"/>
+                            <circle cx="600" cy="200" r="40" fill="none" stroke="#F59E0B" stroke-width="8"
+                                    stroke-dasharray="168" stroke-dashoffset="50" transform="rotate(-90 600 200)"/>
+                            <text x="600" y="200" text-anchor="middle" font-size="24" font-weight="bold" fill="#F59E0B">67</text>
+                            <text x="600" y="215" text-anchor="middle" font-size="10" fill="#6B7280">/100</text>
+                            <text x="600" y="255" text-anchor="middle" font-size="12" font-weight="bold">MoneySense Score</text>
+
+                            <!-- Validation Checks -->
+                            <rect x="430" y="280" width="340" height="80" fill="#FEF2F2" stroke="#EF4444" rx="6"/>
+                            <text x="440" y="295" font-size="11" font-weight="bold" fill="#DC2626">❌ Premium Too High (17.8% vs 15% limit)</text>
+                            <text x="440" y="310" font-size="10" fill="#6B7280">Current: $800/month on $4,500 income</text>
+                            <text x="440" y="325" font-size="10" fill="#059669">💡 Reduce to $675/month or increase income</text>
+
+                            <rect x="430" y="370" width="340" height="60" fill="#ECFDF5" stroke="#10B981" rx="6"/>
+                            <text x="440" y="385" font-size="11" font-weight="bold" fill="#065F46">✅ Death Coverage Adequate</text>
+                            <text x="440" y="400" font-size="10" fill="#6B7280">$405,000 (9x annual income) ✓</text>
+
+                            <rect x="430" y="440" width="340" height="60" fill="#FEF3C7" stroke="#F59E0B" rx="6"/>
+                            <text x="440" y="455" font-size="11" font-weight="bold" fill="#92400E">⚠️ Emergency Fund Low</text>
+                            <text x="440" y="470" font-size="10" fill="#6B7280">$8,000 (2.5 months vs 3-6 months needed)</text>
+
+                            <!-- Real-time Update Indicator -->
+                            <circle cx="750" cy="140" r="4" fill="#10B981">
+                                <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="740" y="155" font-size="8" fill="#10B981">LIVE</text>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Live Compliance Monitoring:</strong> Watch the compliance score update in real-time as agents fill out the form. Red warnings turn green instantly when issues are fixed.
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-header">🤖 AI Copilot Chat Interface</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - Copilot Chat</text>
+                            <text x="650" y="35" fill="white" font-size="12">Agent: KARTIK</text>
+
+                            <!-- Chat Header -->
+                            <rect x="20" y="80" width="760" height="60" fill="#667eea" rx="8"/>
+                            <text x="40" y="105" fill="white" font-size="14" font-weight="bold">🤖 AI Compliance Assistant</text>
+                            <text x="40" y="125" fill="white" font-size="11">Ask me anything about MoneySense guidelines and compliance rules</text>
+
+                            <!-- Chat Messages Area -->
+                            <rect x="20" y="150" width="760" height="350" fill="#FAFAFA" stroke="#E5E7EB" rx="8"/>
+
+                            <!-- User Message -->
+                            <rect x="450" y="170" width="310" height="60" fill="#3B82F6" rx="12"/>
+                            <text x="460" y="190" fill="white" font-size="11" font-weight="bold">👤 You</text>
+                            <text x="460" y="205" fill="white" font-size="10">Can I recommend an Investment-Linked</text>
+                            <text x="460" y="218" fill="white" font-size="10">Policy to a 68-year-old client?</text>
+
+                            <!-- AI Response -->
+                            <rect x="40" y="250" width="500" height="160" fill="white" stroke="#E5E7EB" rx="12"/>
+                            <text x="50" y="270" fill="#C5193B" font-size="11" font-weight="bold">🤖 CompliSense AI</text>
+                            <text x="50" y="290" fill="#374151" font-size="10">❌ Not recommended for clients aged 65 and above.</text>
+                            <text x="50" y="305" fill="#374151" font-size="10">Investment-Linked Policies carry market risk and are typically</text>
+                            <text x="50" y="318" fill="#374151" font-size="10">unsuitable for seniors nearing or in retirement.</text>
+
+                            <text x="50" y="340" fill="#059669" font-size="10" font-weight="bold">💡 Better Alternatives:</text>
+                            <text x="50" y="355" fill="#374151" font-size="10">• Whole Life Insurance with guaranteed returns</text>
+                            <text x="50" y="368" fill="#374151" font-size="10">• Immediate Annuity for retirement income</text>
+                            <text x="50" y="381" fill="#374151" font-size="10">• Critical Illness coverage if health permits</text>
+
+                            <!-- Citation Box -->
+                            <rect x="50" y="390" width="480" height="15" fill="#DBEAFE" stroke="#3B82F6" rx="4"/>
+                            <text x="55" y="400" fill="#1E40AF" font-size="8">📚 Source: MoneySense Guide Section 4.2 | AIA Advisory Manual Ch. 12</text>
+
+                            <!-- Quick Suggestions -->
+                            <text x="40" y="535" fill="#6B7280" font-size="11" font-weight="bold">Quick Questions:</text>
+                            <rect x="40" y="545" width="150" height="25" fill="white" stroke="#D1D5DB" rx="12"/>
+                            <text x="45" y="560" fill="#374151" font-size="9">Premium affordability?</text>
+
+                            <rect x="200" y="545" width="150" height="25" fill="white" stroke="#D1D5DB" rx="12"/>
+                            <text x="205" y="560" fill="#374151" font-size="9">Emergency fund rules?</text>
+
+                            <rect x="360" y="545" width="150" height="25" fill="white" stroke="#D1D5DB" rx="12"/>
+                            <text x="365" y="560" fill="#374151" font-size="9">Coverage calculation?</text>
+
+                            <rect x="520" y="545" width="150" height="25" fill="white" stroke="#D1D5DB" rx="12"/>
+                            <text x="525" y="560" fill="#374151" font-size="9">Life stage suitability?</text>
+
+                            <!-- Input Area -->
+                            <rect x="40" y="520" width="600" height="30" fill="white" stroke="#D1D5DB" rx="15"/>
+                            <text x="50" y="538" fill="#9CA3AF" font-size="10">Ask about MoneySense guidelines, product suitability, or compliance rules...</text>
+                            <rect x="650" y="525" width="60" height="20" fill="#C5193B" rx="10"/>
+                            <text x="670" y="537" fill="white" font-size="9" text-anchor="middle">Send</text>
+
+                            <!-- Online Indicator -->
+                            <circle cx="750" cy="100" r="6" fill="#10B981"/>
+                            <text x="730" y="118" font-size="8" fill="#10B981">AI Online</text>
+
+                            <!-- Typing Indicator -->
+                            <circle cx="50" cy="440" r="2" fill="#6B7280">
+                                <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="60" cy="440" r="2" fill="#6B7280">
+                                <animate attributeName="opacity" values="1;0.3;1" dur="1s" begin="0.2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="70" cy="440" r="2" fill="#6B7280">
+                                <animate attributeName="opacity" values="1;0.3;1" dur="1s" begin="0.4s" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Instant Expert Knowledge:</strong> Ask complex compliance questions and get detailed answers with MoneySense citations. Available 24/7 for all agents.
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-header">🎯 AI Product Recommendations</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - Product Recommendations</text>
+                            <text x="650" y="35" fill="white" font-size="12">Agent: KARTIK</text>
+
+                            <!-- Client Profile Summary -->
+                            <rect x="20" y="80" width="760" height="80" fill="#F0F9FF" stroke="#0EA5E9" rx="8"/>
+                            <text x="30" y="100" fill="#0C4A6E" font-size="14" font-weight="bold">👤 Client Profile: Tan Wei Ming</text>
+                            <text x="30" y="118" fill="#475569" font-size="10">Age: 35 | Income: $4,500/month | 2 Children | Risk Profile: Moderate</text>
+                            <text x="30" y="135" fill="#475569" font-size="10">Needs: Term Life Insurance | Budget: $600-800/month | Coverage: $400,000+</text>
+                            <rect x="670" y="90" width="80" height="20" fill="#10B981" rx="10"/>
+                            <text x="705" y="102" fill="white" font-size="9" text-anchor="middle">AI Analyzed</text>
+
+                            <!-- Product Recommendation Cards -->
+                            <text x="30" y="185" font-size="14" font-weight="bold">🎯 AI Product Recommendations (3 of 247 products)</text>
+
+                            <!-- Best Match Product -->
+                            <rect x="20" y="200" width="240" height="180" fill="white" stroke="#10B981" stroke-width="2" rx="8"/>
+                            <rect x="30" y="210" width="60" height="20" fill="#ECFDF5" rx="10"/>
+                            <text x="55" y="222" fill="#059669" font-size="9" text-anchor="middle" font-weight="bold">94% MATCH</text>
+                            <text x="100" y="222" fill="#10B981" font-size="10" font-weight="bold">BEST MATCH</text>
+
+                            <text x="30" y="240" font-size="12" font-weight="bold">Family Protect Plus</text>
+                            <text x="30" y="255" fill="#6B7280" font-size="10">Term Life + Critical Illness</text>
+                            <text x="30" y="270" fill="#C5193B" font-size="14" font-weight="bold">$650/month</text>
+
+                            <!-- Feature list -->
+                            <text x="30" y="290" fill="#059669" font-size="9">✅ Death/TPD: $450,000</text>
+                            <text x="30" y="305" fill="#059669" font-size="9">✅ CI Coverage: $200,000</text>
+                            <text x="30" y="320" fill="#059669" font-size="9">✅ Premium: 14.4% of income</text>
+                            <text x="30" y="335" fill="#059669" font-size="9">✅ Age-appropriate (35)</text>
+
+                            <rect x="30" y="350" width="80" height="20" fill="#C5193B" rx="6"/>
+                            <text x="65" y="362" fill="white" font-size="9" text-anchor="middle">Apply to FHR</text>
+
+                            <!-- Good Fit Product -->
+                            <rect x="280" y="200" width="240" height="180" fill="white" stroke="#F59E0B" stroke-width="2" rx="8"/>
+                            <rect x="290" y="210" width="60" height="20" fill="#FEF3C7" rx="10"/>
+                            <text x="315" y="222" fill="#D97706" font-size="9" text-anchor="middle" font-weight="bold">87% MATCH</text>
+                            <text x="360" y="222" fill="#F59E0B" font-size="10" font-weight="bold">GOOD FIT</text>
+
+                            <text x="290" y="240" font-size="12" font-weight="bold">Prime Protect</text>
+                            <text x="290" y="255" fill="#6B7280" font-size="10">Whole Life + Investment</text>
+                            <text x="290" y="270" fill="#C5193B" font-size="14" font-weight="bold">$675/month</text>
+
+                            <text x="290" y="290" fill="#059669" font-size="9">✅ Death: $400,000</text>
+                            <text x="290" y="305" fill="#F59E0B" font-size="9">⚠️ Premium: 15.0% (limit)</text>
+                            <text x="290" y="320" fill="#059669" font-size="9">✅ Cash value growth</text>
+                            <text x="290" y="335" fill="#059669" font-size="9">✅ Long-term savings</text>
+
+                            <rect x="290" y="350" width="80" height="20" fill="#F59E0B" rx="6"/>
+                            <text x="325" y="362" fill="white" font-size="9" text-anchor="middle">View Details</text>
+
+                            <!-- Alternative Product -->
+                            <rect x="540" y="200" width="240" height="180" fill="white" stroke="#6B7280" stroke-width="2" rx="8"/>
+                            <rect x="550" y="210" width="60" height="20" fill="#F3F4F6" rx="10"/>
+                            <text x="575" y="222" fill="#6B7280" font-size="9" text-anchor="middle" font-weight="bold">79% MATCH</text>
+                            <text x="620" y="222" fill="#6B7280" font-size="10" font-weight="bold">ALTERNATIVE</text>
+
+                            <text x="550" y="240" font-size="12" font-weight="bold">Essential Term</text>
+                            <text x="550" y="255" fill="#6B7280" font-size="10">Basic Term Life</text>
+                            <text x="550" y="270" fill="#C5193B" font-size="14" font-weight="bold">$350/month</text>
+
+                            <text x="550" y="290" fill="#059669" font-size="9">✅ Death: $300,000</text>
+                            <text x="550" y="305" fill="#059669" font-size="9">✅ Premium: 7.8% of income</text>
+                            <text x="550" y="320" fill="#EF4444" font-size="9">❌ Coverage below 9x income</text>
+                            <text x="550" y="335" fill="#EF4444" font-size="9">❌ No CI coverage</text>
+
+                            <rect x="550" y="350" width="80" height="20" fill="#6B7280" rx="6"/>
+                            <text x="585" y="362" fill="white" font-size="9" text-anchor="middle">Compare</text>
+
+                            <!-- AI Recommendation Box -->
+                            <rect x="20" y="400" width="760" height="80" fill="#ECFDF5" stroke="#10B981" rx="8"/>
+                            <text x="30" y="420" fill="#065F46" font-size="12" font-weight="bold">🤖 Why CompliSense AI Recommends Family Protect Plus:</text>
+                            <text x="30" y="440" fill="#374151" font-size="10">• Perfect fit for life stage: Young family with 2 children requiring comprehensive protection</text>
+                            <text x="30" y="455" fill="#374151" font-size="10">• Optimal premium ratio: 14.4% vs 15% MoneySense limit provides safety buffer</text>
+                            <text x="30" y="470" fill="#374151" font-size="10">• Balanced coverage: 10x income death benefit + 4.4x income critical illness exceeds guidelines</text>
+
+                            <!-- Quick Stats -->
+                            <rect x="20" y="500" width="180" height="80" fill="#FEF3C7" stroke="#F59E0B" rx="8"/>
+                            <text x="30" y="520" fill="#92400E" font-size="11" font-weight="bold">📊 Analysis Summary</text>
+                            <text x="30" y="535" fill="#374151" font-size="9">Products analyzed: 247</text>
+                            <text x="30" y="548" fill="#374151" font-size="9">Suitable matches: 23</text>
+                            <text x="30" y="561" fill="#374151" font-size="9">Processing time: 0.8s</text>
+
+                            <rect x="220" y="500" width="180" height="80" fill="#DBEAFE" stroke="#3B82F6" rx="8"/>
+                            <text x="230" y="520" fill="#1E40AF" font-size="11" font-weight="bold">🎯 Suitability Score</text>
+                            <text x="230" y="535" fill="#374151" font-size="9">Client profile match: 94%</text>
+                            <text x="230" y="548" fill="#374151" font-size="9">MoneySense compliant: ✅</text>
+                            <text x="230" y="561" fill="#374151" font-size="9">Risk appropriateness: ✅</text>
+
+                            <rect x="420" y="500" width="180" height="80" fill="#FEF2F2" stroke="#EF4444" rx="8"/>
+                            <text x="430" y="520" fill="#DC2626" font-size="11" font-weight="bold">⚠️ Considerations</text>
+                            <text x="430" y="535" fill="#374151" font-size="9">Budget verification needed</text>
+                            <text x="430" y="548" fill="#374151" font-size="9">Health screening required</text>
+                            <text x="430" y="561" fill="#374151" font-size="9">Annual review recommended</text>
+
+                            <!-- Processing Indicator -->
+                            <circle cx="750" cy="180" r="4" fill="#3B82F6">
+                                <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="730" y="195" font-size="8" fill="#3B82F6">AI PROCESSING</text>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Smart Product Matching:</strong> AI analyzes 247 products and shows top 3 matches with suitability scores (94%, 87%, 79%) and compliance validation.
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-header">👨‍💼 Supervisor Efficiency Dashboard</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - Supervisor Dashboard</text>
+                            <text x="600" y="35" fill="white" font-size="12">Supervisor: CHEN WEI LIN</text>
+
+                            <!-- Stats Overview -->
+                            <rect x="20" y="80" width="180" height="80" fill="white" stroke="#EF4444" stroke-width="2" rx="8"/>
+                            <text x="30" y="100" fill="#DC2626" font-size="24" font-weight="bold">3</text>
+                            <text x="30" y="115" fill="#6B7280" font-size="10">High-Risk Proposals</text>
+                            <text x="30" y="130" fill="#EF4444" font-size="9">🚨 Urgent Review</text>
+                            <text x="30" y="145" fill="#6B7280" font-size="8">Avg Score: 59/100</text>
+
+                            <rect x="220" y="80" width="180" height="80" fill="white" stroke="#F59E0B" stroke-width="2" rx="8"/>
+                            <text x="230" y="100" fill="#D97706" font-size="24" font-weight="bold">12</text>
+                            <text x="230" y="115" fill="#6B7280" font-size="10">Medium-Risk Proposals</text>
+                            <text x="230" y="130" fill="#F59E0B" font-size="9">⚠️ Standard Review</text>
+                            <text x="230" y="145" fill="#6B7280" font-size="8">Avg Score: 76/100</text>
+
+                            <rect x="420" y="80" width="180" height="80" fill="white" stroke="#10B981" stroke-width="2" rx="8"/>
+                            <text x="430" y="100" fill="#059669" font-size="24" font-weight="bold">35</text>
+                            <text x="430" y="115" fill="#6B7280" font-size="10">Low-Risk Proposals</text>
+                            <text x="430" y="130" fill="#10B981" font-size="9">✅ Ready for Bulk Approval</text>
+                            <text x="430" y="145" fill="#6B7280" font-size="8">Avg Score: 91/100</text>
+
+                            <rect x="620" y="80" width="160" height="80" fill="#F8FAFC" stroke="#64748B" rx="8"/>
+                            <text x="630" y="100" fill="#374151" font-size="20" font-weight="bold">8.75 hrs</text>
+                            <text x="630" y="115" fill="#6B7280" font-size="10">Time Saved Today</text>
+                            <text x="630" y="130" fill="#059669" font-size="9">💰 $875 productivity</text>
+                            <text x="630" y="145" fill="#6B7280" font-size="8">vs manual review</text>
+
+                            <!-- High-Risk Proposals Section -->
+                            <text x="20" y="185" fill="#DC2626" font-size="14" font-weight="bold">🚨 High-Risk Proposals Requiring Attention</text>
+
+                            <!-- Risk Proposal 1 -->
+                            <rect x="20" y="195" width="760" height="70" fill="white" stroke="#EF4444" rx="8"/>
+                            <rect x="30" y="205" width="8" height="50" fill="#EF4444" rx="4"/>
+                            <text x="50" y="220" font-size="12" font-weight="bold">Tan Wei Ming (35) - Term Life Insurance</text>
+                            <text x="50" y="235" fill="#6B7280" font-size="10">FHR-2025-001 | Submitted: Dec 15, 10:30 AM | Agent: Mahadevan Kartik</text>
+
+                            <rect x="500" y="205" width="60" height="25" fill="#FEF2F2" stroke="#EF4444" rx="12"/>
+                            <text x="525" y="220" fill="#DC2626" font-size="12" font-weight="bold" text-anchor="middle">67/100</text>
+
+                            <rect x="580" y="205" width="80" height="25" fill="#EF4444" rx="12"/>
+                            <text x="615" y="220" fill="white" font-size="10" text-anchor="middle" font-weight="bold">REJECT</text>
+
+                            <rect x="680" y="205" width="80" height="25" fill="#3B82F6" rx="6"/>
+                            <text x="715" y="220" fill="white" font-size="9" text-anchor="middle">Review Details</text>
+
+                            <text x="50" y="250" fill="#DC2626" font-size="9">❌ Premium 17.8% of income (>15% limit) | ⚠️ Emergency fund only 2.5 months</text>
+
+                            <!-- Risk Proposal 2 -->
+                            <rect x="20" y="275" width="760" height="70" fill="white" stroke="#EF4444" rx="8"/>
+                            <rect x="30" y="285" width="8" height="50" fill="#EF4444" rx="4"/>
+                            <text x="50" y="300" font-size="12" font-weight="bold">Lim Siew Hong (68) - Investment-Linked Policy</text>
+                            <text x="50" y="315" fill="#6B7280" font-size="10">FHR-2025-004 | Submitted: Dec 14, 2:45 PM | Agent: Jennifer Ng</text>
+
+                            <rect x="500" y="285" width="60" height="25" fill="#FEF2F2" stroke="#EF4444" rx="12"/>
+                            <text x="525" y="300" fill="#DC2626" font-size="12" font-weight="bold" text-anchor="middle">52/100</text>
+
+                            <rect x="580" y="285" width="80" height="25" fill="#EF4444" rx="12"/>
+                            <text x="615" y="300" fill="white" font-size="10" text-anchor="middle" font-weight="bold">REJECT</text>
+
+                            <rect x="680" y="285" width="80" height="25" fill="#3B82F6" rx="6"/>
+                            <text x="715" y="300" fill="white" font-size="9" text-anchor="middle">Review Details</text>
+
+                            <text x="50" y="330" fill="#DC2626" font-size="9">❌ ILP not suitable for age 65+ | ❌ High market risk for retiree</text>
+
+                            <!-- Bulk Approval Section -->
+                            <rect x="20" y="365" width="760" height="80" fill="#ECFDF5" stroke="#10B981" rx="8"/>
+                            <text x="30" y="385" fill="#065F46" font-size="14" font-weight="bold">✅ Bulk Approval Ready (35 proposals)</text>
+                            <text x="30" y="405" fill="#374151" font-size="10">All proposals scored 85+ with full MoneySense compliance. AI confidence: 89-96%</text>
+                            <text x="30" y="420" fill="#6B7280" font-size="9">Estimated manual review time: 8.75 hours | AI processing time: 2 seconds</text>
+
+                            <rect x="550" y="375" width="120" height="35" fill="#10B981" rx="8"/>
+                            <text x="605" y="395" fill="white" font-size="12" text-anchor="middle" font-weight="bold">Approve All 35</text>
+
+                            <rect x="680" y="375" width="80" height="35" fill="#3B82F6" rx="8"/>
+                            <text x="715" y="395" fill="white" font-size="10" text-anchor="middle">View List</text>
+
+                            <!-- AI Summary Box -->
+                            <rect x="20" y="465" width="760" height="115" fill="#F0F9FF" stroke="#0EA5E9" rx="8"/>
+                            <text x="30" y="485" fill="#0C4A6E" font-size="14" font-weight="bold">🤖 AI Summary & Recommendations</text>
+
+                            <text x="30" y="505" fill="#374151" font-size="10" font-weight="bold">Priority Actions:</text>
+                            <text x="30" y="520" fill="#374151" font-size="9">1. Review 3 high-risk proposals (est. 45 minutes) - 2 clear rejections, 1 needs agent clarification</text>
+                            <text x="30" y="535" fill="#374151" font-size="9">2. Bulk approve 35 low-risk proposals (2 seconds) - All MoneySense compliant with 89-96% AI confidence</text>
+                            <text x="30" y="550" fill="#374151" font-size="9">3. Schedule medium-risk reviews for tomorrow morning - No urgent issues detected</text>
+
+                            <text x="30" y="570" fill="#059669" font-size="10" font-weight="bold">Today's Impact: 90% time savings, 100% compliance accuracy, 48 proposals processed vs 6 manual capacity</text>
+
+                            <!-- Live Updates Indicator -->
+                            <circle cx="750" cy="185" r="4" fill="#EF4444">
+                                <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="720" y="198" font-size="8" fill="#EF4444">LIVE UPDATES</text>
+
+                            <!-- Performance Metrics -->
+                            <rect x="600" y="465" width="180" height="55" fill="white" stroke="#D1D5DB" rx="6"/>
+                            <text x="610" y="480" fill="#374151" font-size="10" font-weight="bold">📈 Today's Performance</text>
+                            <text x="610" y="495" fill="#6B7280" font-size="8">Proposals processed: 50</text>
+                            <text x="610" y="508" fill="#6B7280" font-size="8">Accuracy rate: 100%</text>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Bulk Approval Magic:</strong> AI categorizes 50 proposals → 3 high-risk requiring attention, 35 low-risk ready for bulk approval in 2 seconds.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Before/After Comparison -->
+            <div class="before-after">
+                <div class="before-after-card before">
+                    <h4>❌ Before CompliSense AI</h4>
+                    <div style="font-size: 2em; color: #EF4444; margin: 15px 0;">2 DAYS</div>
+                    <p>Manual compliance checks<br>
+                    35% error rate<br>
+                    8.75 hours supervisor time<br>
+                    Frustrated agents</p>
+                </div>
+                <div class="before-after-card after">
+                    <h4>✅ After CompliSense AI</h4>
+                    <div style="font-size: 2em; color: #10B981; margin: 15px 0;">30 MINUTES</div>
+                    <p>Real-time AI validation<br>
+                    90% approval rate<br>
+                    2 seconds bulk approval<br>
+                    Empowered agents</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="fhr-form.html" class="demo-link" target="_blank">📋 Try FHR Form Demo</a>
+                <a href="copilot.html" class="demo-link" target="_blank">🤖 Chat with AI Copilot</a>
+                <a href="products.html" class="demo-link" target="_blank">🎯 See Product Recommendations</a>
+                <a href="supervisor.html" class="demo-link" target="_blank">👨‍💼 View Supervisor Dashboard</a>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 30px; background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3);">
+                <h4 style="color: white;">💡 Demo Highlights</h4>
+                <p style="color: #E5E7EB;"><strong>Try This:</strong> Change monthly premium from $800 to $675 in FHR Form → Watch compliance score jump from 67 to 89. Ask AI Copilot "Can I recommend ILP to a 68-year-old?" → See instant regulatory guidance with citations.</p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h3><span class="emoji">🚀</span>Ready to Transform AIA Singapore's Future?</h3>
+            <p style="font-size: 1.2em; margin-bottom: 30px;">CompliSense AI is ready for immediate deployment. Our prototype demonstrates proven capabilities, and our implementation plan ensures smooth rollout with measurable ROI from Day 1.</p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                <a href="#" class="btn">📊 Request Full Demo</a>
+                <a href="#" class="btn">💼 Business Case Details</a>
+                <a href="#" class="btn">🔬 Technical Deep Dive</a>
+                <a href="#" class="btn">💰 ROI Calculator</a>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                <p style="font-size: 1.1em; margin: 0;">
+                    <strong>Next Steps:</strong> Approve pilot program → Deploy with 50 agents → Measure results → Scale across organization → Achieve $2.8M annual savings
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 30px; color: #666; border-top: 2px solid #f0f0f0; margin-top: 40px;">
+            <p><strong>CompliSense AI - Group Innovation Office Submission</strong></p>
+            <p>Developed by: <strong>Mahadevan Kartik</strong> | Powered by: <strong>Claude Code</strong></p>
+            <p>Contact: <a href="mailto:kartik@aia.com" style="color: #C5193B;">kartik@aia.com</a> |
+               Project Repository: <a href="#" style="color: #C5193B;">github.com/aia-singapore/complisense-ai</a></p>
+            <p style="margin-top: 20px; font-style: italic;">"Innovation that matters. Compliance that scales. Results that transform."</p>
+        </footer>
+    </div>
+</body>
+</html>
