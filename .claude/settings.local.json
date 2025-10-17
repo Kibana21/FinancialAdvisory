@@ -10,7 +10,8 @@
       "Bash(if grep -q \"Vitality Bronze\" \"$file\")",
       "Bash(then)",
       "Bash(echo:*)",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

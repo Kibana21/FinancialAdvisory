@@ -1135,6 +1135,645 @@
                         <strong>Bulk Approval Magic:</strong> AI categorizes 50 proposals → 3 high-risk requiring attention, 35 low-risk ready for bulk approval in 2 seconds.
                     </div>
                 </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-header">📊 Compliance Analytics Dashboard</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - Analytics Dashboard</text>
+                            <text x="650" y="35" fill="white" font-size="12">Agent: KARTIK</text>
+
+                            <!-- KPI Cards Row -->
+                            <rect x="20" y="80" width="180" height="70" fill="white" stroke="#10B981" rx="8"/>
+                            <text x="30" y="100" fill="#059669" font-size="24" font-weight="bold">92%</text>
+                            <text x="30" y="118" fill="#6B7280" font-size="10">First-Time Approval Rate</text>
+                            <text x="30" y="135" fill="#10B981" font-size="9">↑ 28% vs last month</text>
+
+                            <rect x="210" y="80" width="180" height="70" fill="white" stroke="#3B82F6" rx="8"/>
+                            <text x="220" y="100" fill="#1E40AF" font-size="24" font-weight="bold">28 min</text>
+                            <text x="220" y="118" fill="#6B7280" font-size="10">Avg. Review Time</text>
+                            <text x="220" y="135" fill="#3B82F6" font-size="9">↓ 94% reduction</text>
+
+                            <rect x="400" y="80" width="180" height="70" fill="white" stroke="#8B5CF6" rx="8"/>
+                            <text x="410" y="100" fill="#7C3AED" font-size="24" font-weight="bold">1,247</text>
+                            <text x="410" y="118" fill="#6B7280" font-size="10">Proposals This Month</text>
+                            <text x="410" y="135" fill="#8B5CF6" font-size="9">↑ 15% vs last month</text>
+
+                            <rect x="590" y="80" width="190" height="70" fill="white" stroke="#F59E0B" rx="8"/>
+                            <text x="600" y="100" fill="#D97706" font-size="24" font-weight="bold">$124K</text>
+                            <text x="600" y="118" fill="#6B7280" font-size="10">Cost Savings (MTD)</text>
+                            <text x="600" y="135" fill="#F59E0B" font-size="9">On track: $2.8M/year</text>
+
+                            <!-- Compliance Trend Chart -->
+                            <rect x="20" y="170" width="380" height="200" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="30" y="190" font-size="12" font-weight="bold">📈 Compliance Score Trend (Last 6 Months)</text>
+
+                            <!-- Chart Grid Lines -->
+                            <line x1="60" y1="360" x2="380" y2="360" stroke="#E5E7EB" stroke-width="1"/>
+                            <line x1="60" y1="330" x2="380" y2="330" stroke="#E5E7EB" stroke-width="1"/>
+                            <line x1="60" y1="300" x2="380" y2="300" stroke="#E5E7EB" stroke-width="1"/>
+                            <line x1="60" y1="270" x2="380" y2="270" stroke="#E5E7EB" stroke-width="1"/>
+                            <line x1="60" y1="240" x2="380" y2="240" stroke="#E5E7EB" stroke-width="1"/>
+                            <line x1="60" y1="210" x2="380" y2="210" stroke="#E5E7EB" stroke-width="1"/>
+
+                            <!-- Y-axis labels -->
+                            <text x="45" y="215" font-size="8" fill="#6B7280" text-anchor="end">100</text>
+                            <text x="45" y="275" font-size="8" fill="#6B7280" text-anchor="end">75</text>
+                            <text x="45" y="335" font-size="8" fill="#6B7280" text-anchor="end">50</text>
+                            <text x="45" y="365" font-size="8" fill="#6B7280" text-anchor="end">25</text>
+
+                            <!-- Trend Line -->
+                            <polyline points="60,310 113,295 166,280 219,255 272,235 325,218 378,210"
+                                      fill="none" stroke="#10B981" stroke-width="3"/>
+
+                            <!-- Data Points -->
+                            <circle cx="60" cy="310" r="4" fill="#10B981"/>
+                            <circle cx="113" cy="295" r="4" fill="#10B981"/>
+                            <circle cx="166" cy="280" r="4" fill="#10B981"/>
+                            <circle cx="219" cy="255" r="4" fill="#10B981"/>
+                            <circle cx="272" cy="235" r="4" fill="#10B981"/>
+                            <circle cx="325" cy="218" r="4" fill="#10B981"/>
+                            <circle cx="378" cy="210" r="5" fill="#C5193B"/>
+
+                            <!-- X-axis labels -->
+                            <text x="60" y="375" font-size="8" fill="#6B7280" text-anchor="middle">Jul</text>
+                            <text x="113" y="375" font-size="8" fill="#6B7280" text-anchor="middle">Aug</text>
+                            <text x="166" y="375" font-size="8" fill="#6B7280" text-anchor="middle">Sep</text>
+                            <text x="219" y="375" font-size="8" fill="#6B7280" text-anchor="middle">Oct</text>
+                            <text x="272" y="375" font-size="8" fill="#6B7280" text-anchor="middle">Nov</text>
+                            <text x="325" y="375" font-size="8" fill="#6B7280" text-anchor="middle">Dec</text>
+
+                            <!-- Top Agent Performance -->
+                            <rect x="420" y="170" width="360" height="200" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="430" y="190" font-size="12" font-weight="bold">🏆 Top Performing Agents</text>
+
+                            <!-- Agent 1 -->
+                            <rect x="430" y="200" width="340" height="35" fill="#ECFDF5" stroke="#10B981" rx="6"/>
+                            <text x="440" y="218" font-size="11" font-weight="bold" fill="#065F46">1. Jennifer Ng</text>
+                            <text x="440" y="230" font-size="9" fill="#6B7280">98.5% approval | 127 proposals | 0 rejections</text>
+                            <rect x="720" y="205" width="40" height="20" fill="#10B981" rx="10"/>
+                            <text x="735" y="218" fill="white" font-size="9" text-anchor="middle">A+</text>
+
+                            <!-- Agent 2 -->
+                            <rect x="430" y="240" width="340" height="35" fill="#ECFDF5" stroke="#10B981" rx="6"/>
+                            <text x="440" y="258" font-size="11" font-weight="bold" fill="#065F46">2. David Tan</text>
+                            <text x="440" y="270" font-size="9" fill="#6B7280">96.2% approval | 118 proposals | 4 rejections</text>
+                            <rect x="720" y="245" width="40" height="20" fill="#10B981" rx="10"/>
+                            <text x="735" y="258" fill="white" font-size="9" text-anchor="middle">A</text>
+
+                            <!-- Agent 3 -->
+                            <rect x="430" y="280" width="340" height="35" fill="#FEF3C7" stroke="#F59E0B" rx="6"/>
+                            <text x="440" y="298" font-size="11" font-weight="bold" fill="#92400E">3. Sarah Lim</text>
+                            <text x="440" y="310" font-size="9" fill="#6B7280">91.8% approval | 103 proposals | 8 rejections</text>
+                            <rect x="720" y="285" width="40" height="20" fill="#F59E0B" rx="10"/>
+                            <text x="735" y="298" fill="white" font-size="9" text-anchor="middle">B+</text>
+
+                            <!-- Agent 4 -->
+                            <rect x="430" y="320" width="340" height="35" fill="#FEF3C7" stroke="#F59E0B" rx="6"/>
+                            <text x="440" y="338" font-size="11" font-weight="bold" fill="#92400E">4. Mahadevan Kartik</text>
+                            <text x="440" y="350" font-size="9" fill="#6B7280">89.5% approval | 95 proposals | 10 rejections</text>
+                            <rect x="720" y="325" width="40" height="20" fill="#F59E0B" rx="10"/>
+                            <text x="735" y="338" fill="white" font-size="9" text-anchor="middle">B</text>
+
+                            <!-- Common Issues Chart -->
+                            <rect x="20" y="390" width="380" height="190" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="30" y="410" font-size="12" font-weight="bold">⚠️ Most Common Compliance Issues</text>
+
+                            <!-- Issue Bars -->
+                            <rect x="30" y="425" width="280" height="20" fill="#FEF2F2" rx="4"/>
+                            <rect x="30" y="425" width="240" height="20" fill="#EF4444" rx="4"/>
+                            <text x="35" y="438" font-size="9" fill="white" font-weight="bold">Premium Exceeds 15% (42%)</text>
+
+                            <rect x="30" y="455" width="280" height="20" fill="#FEF3C7" rx="4"/>
+                            <rect x="30" y="455" width="196" height="20" fill="#F59E0B" rx="4"/>
+                            <text x="35" y="468" font-size="9" fill="white" font-weight="bold">Insufficient Coverage (35%)</text>
+
+                            <rect x="30" y="485" width="280" height="20" fill="#FEF3C7" rx="4"/>
+                            <rect x="30" y="485" width="140" height="20" fill="#F59E0B" rx="4"/>
+                            <text x="35" y="498" font-size="9" fill="white" font-weight="bold">Low Emergency Fund (25%)</text>
+
+                            <rect x="30" y="515" width="280" height="20" fill="#DBEAFE" rx="4"/>
+                            <rect x="30" y="515" width="112" height="20" fill="#3B82F6" rx="4"/>
+                            <text x="35" y="528" font-size="9" fill="white" font-weight="bold">Age Mismatch (20%)</text>
+
+                            <rect x="30" y="545" width="280" height="20" fill="#DBEAFE" rx="4"/>
+                            <rect x="30" y="545" width="70" height="20" fill="#3B82F6" rx="4"/>
+                            <text x="35" y="558" font-size="9" fill="white" font-weight="bold">Other (12%)</text>
+
+                            <!-- AI Insights Panel -->
+                            <rect x="420" y="390" width="360" height="190" fill="#F0F9FF" stroke="#0EA5E9" rx="8"/>
+                            <text x="430" y="410" font-size="12" font-weight="bold" fill="#0C4A6E">🤖 AI Insights & Recommendations</text>
+
+                            <rect x="430" y="420" width="340" height="60" fill="white" stroke="#10B981" rx="6"/>
+                            <text x="440" y="435" font-size="10" font-weight="bold" fill="#065F46">✅ Key Success Factor</text>
+                            <text x="440" y="450" font-size="9" fill="#374151">Agents using AI Copilot have 23% higher approval rates</text>
+                            <text x="440" y="465" font-size="9" fill="#374151">and 40% fewer premium-related rejections.</text>
+
+                            <rect x="430" y="490" width="340" height="60" fill="white" stroke="#F59E0B" rx="6"/>
+                            <text x="440" y="505" font-size="10" font-weight="bold" fill="#92400E">💡 Action Recommended</text>
+                            <text x="440" y="520" font-size="9" fill="#374151">Schedule training on premium affordability calculations</text>
+                            <text x="440" y="535" font-size="9" fill="#374151">for agents with >30% rejection rate (12 agents identified).</text>
+
+                            <rect x="430" y="560" width="340" height="15" fill="#ECFDF5" rx="4"/>
+                            <text x="440" y="571" font-size="8" fill="#059669">🎯 Target: 95% approval rate by Q2 2025 (currently 92%)</text>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Data-Driven Excellence:</strong> Real-time analytics showing 92% approval rates, 28-minute avg review time, and AI-powered insights identifying training opportunities.
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-header">📱 Client Portfolio Analyzer</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - Portfolio Analyzer</text>
+                            <text x="650" y="35" fill="white" font-size="12">Agent: KARTIK</text>
+
+                            <!-- Client Header -->
+                            <rect x="20" y="80" width="760" height="70" fill="#F0F9FF" stroke="#0EA5E9" rx="8"/>
+                            <text x="30" y="100" fill="#0C4A6E" font-size="14" font-weight="bold">👤 Client: Tan Wei Ming (35)</text>
+                            <text x="30" y="118" fill="#475569" font-size="10">Income: $4,500/month | Family: Married, 2 Children | Risk Profile: Moderate</text>
+                            <text x="30" y="133" fill="#475569" font-size="10">Total Premium: $1,250/month (27.8% of income) | Total Coverage: $850,000</text>
+                            <rect x="670" y="90" width="90" height="25" fill="#EF4444" rx="10"/>
+                            <text x="710" y="106" fill="white" font-size="10" text-anchor="middle" font-weight="bold">⚠️ REVIEW NEEDED</text>
+
+                            <!-- Policy Cards -->
+                            <text x="20" y="175" font-size="14" font-weight="bold">📋 Active Policies (4)</text>
+
+                            <!-- Policy 1 -->
+                            <rect x="20" y="185" width="370" height="85" fill="white" stroke="#10B981" rx="8"/>
+                            <rect x="30" y="195" width="8" height="65" fill="#10B981" rx="4"/>
+                            <text x="50" y="210" font-size="12" font-weight="bold">Family Protect Plus</text>
+                            <text x="50" y="225" fill="#6B7280" font-size="9">Policy #: FP-2023-8847 | Start: Jan 2023 | Term: 20 years</text>
+                            <rect x="300" y="195" width="70" height="20" fill="#ECFDF5" stroke="#10B981" rx="10"/>
+                            <text x="330" y="208" fill="#059669" font-size="9" text-anchor="middle">✅ COMPLIANT</text>
+
+                            <text x="50" y="245" fill="#374151" font-size="9">Coverage: $450,000 Death/TPD + $200,000 CI</text>
+                            <text x="50" y="258" fill="#374151" font-size="9">Premium: $650/month (14.4% of income)</text>
+
+                            <!-- Policy 2 -->
+                            <rect x="410" y="185" width="370" height="85" fill="white" stroke="#F59E0B" rx="8"/>
+                            <rect x="420" y="195" width="8" height="65" fill="#F59E0B" rx="4"/>
+                            <text x="440" y="210" font-size="12" font-weight="bold">Investment Shield ILP</text>
+                            <text x="440" y="225" fill="#6B7280" font-size="9">Policy #: IS-2024-1129 | Start: Aug 2024 | Term: 25 years</text>
+                            <rect x="690" y="195" width="70" height="20" fill="#FEF3C7" stroke="#F59E0B" rx="10"/>
+                            <text x="720" y="208" fill="#D97706" font-size="9" text-anchor="middle">⚠️ WARNING</text>
+
+                            <text x="440" y="245" fill="#374151" font-size="9">Coverage: $200,000 Death + Investment Component</text>
+                            <text x="440" y="258" fill="#D97706" font-size="9" font-weight="bold">Premium: $600/month (13.3% of income) ⚠️</text>
+
+                            <!-- Policy 3 -->
+                            <rect x="20" y="280" width="370" height="85" fill="white" stroke="#6B7280" rx="8"/>
+                            <rect x="30" y="290" width="8" height="65" fill="#6B7280" rx="4"/>
+                            <text x="50" y="305" font-size="12" font-weight="bold">MediShield Life</text>
+                            <text x="50" y="320" fill="#6B7280" font-size="9">Policy #: MS-2020-4523 | Start: Jan 2020 | Term: Lifetime</text>
+                            <rect x="300" y="290" width="70" height="20" fill="#F3F4F6" stroke="#6B7280" rx="10"/>
+                            <text x="330" y="303" fill="#374151" font-size="9" text-anchor="middle">GOVT SCHEME</text>
+
+                            <text x="50" y="340" fill="#374151" font-size="9">Coverage: Up to $100,000 hospitalization</text>
+                            <text x="50" y="353" fill="#374151" font-size="9">Premium: Auto-deducted from MediSave</text>
+
+                            <!-- Policy 4 -->
+                            <rect x="410" y="280" width="370" height="85" fill="white" stroke="#6B7280" rx="8"/>
+                            <rect x="420" y="290" width="8" height="65" fill="#6B7280" rx="4"/>
+                            <text x="440" y="305" font-size="12" font-weight="bold">CPF Life Retirement Plan</text>
+                            <text x="440" y="320" fill="#6B7280" font-size="9">Policy #: CPF-1988-7734 | Start: 2023 | Payout: From age 65</text>
+                            <rect x="690" y="290" width="70" height="20" fill="#F3F4F6" stroke="#6B7280" rx="10"/>
+                            <text x="720" y="303" fill="#374151" font-size="9" text-anchor="middle">GOVT SCHEME</text>
+
+                            <text x="440" y="340" fill="#374151" font-size="9">Estimated Payout: $1,200-1,500/month</text>
+                            <text x="440" y="353" fill="#374151" font-size="9">CPF Balance: $85,000</text>
+
+                            <!-- Coverage Gap Analysis -->
+                            <rect x="20" y="385" width="370" height="195" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="30" y="405" font-size="12" font-weight="bold">🎯 Coverage Gap Analysis</text>
+
+                            <!-- Death Coverage -->
+                            <text x="30" y="430" font-size="10" font-weight="bold" fill="#374151">Death/TPD Coverage</text>
+                            <rect x="30" y="435" width="340" height="15" fill="#E5E7EB" rx="7"/>
+                            <rect x="30" y="435" width="289" height="15" fill="#10B981" rx="7"/>
+                            <text x="365" y="445" font-size="8" fill="#6B7280" text-anchor="end">85%</text>
+                            <text x="30" y="462" font-size="8" fill="#059669">✅ $650K current vs $750K recommended (9x income)</text>
+
+                            <!-- CI Coverage -->
+                            <text x="30" y="485" font-size="10" font-weight="bold" fill="#374151">Critical Illness Coverage</text>
+                            <rect x="30" y="490" width="340" height="15" fill="#E5E7EB" rx="7"/>
+                            <rect x="30" y="490" width="204" height="15" fill="#F59E0B" rx="7"/>
+                            <text x="365" y="500" font-size="8" fill="#6B7280" text-anchor="end">60%</text>
+                            <text x="30" y="517" font-size="8" fill="#D97706">⚠️ $200K current vs $333K recommended (4x income)</text>
+
+                            <!-- Retirement Savings -->
+                            <text x="30" y="540" font-size="10" font-weight="bold" fill="#374151">Retirement Savings</text>
+                            <rect x="30" y="545" width="340" height="15" fill="#E5E7EB" rx="7"/>
+                            <rect x="30" y="545" width="119" height="15" fill="#EF4444" rx="7"/>
+                            <text x="365" y="555" font-size="8" fill="#6B7280" text-anchor="end">35%</text>
+                            <text x="30" y="572" font-size="8" fill="#DC2626">❌ $85K current vs $240K target (by age 55)</text>
+
+                            <!-- AI Recommendations Panel -->
+                            <rect x="410" y="385" width="370" height="195" fill="#ECFDF5" stroke="#10B981" rx="8"/>
+                            <text x="420" y="405" font-size="12" font-weight="bold" fill="#065F46">🤖 AI Recommendations</text>
+
+                            <rect x="420" y="415" width="350" height="55" fill="white" stroke="#EF4444" rx="6"/>
+                            <text x="430" y="430" font-size="10" font-weight="bold" fill="#DC2626">🚨 URGENT: Premium Overload</text>
+                            <text x="430" y="445" font-size="9" fill="#374151">Total premium $1,250 = 27.8% of income (exceeds 15% limit)</text>
+                            <text x="430" y="460" font-size="9" fill="#059669">💡 Reduce ILP premium to $350 OR cancel ILP entirely</text>
+
+                            <rect x="420" y="480" width="350" height="45" fill="white" stroke="#F59E0B" rx="6"/>
+                            <text x="430" y="495" font-size="10" font-weight="bold" fill="#D97706">⚠️ Coverage Gap: Critical Illness</text>
+                            <text x="430" y="510" font-size="9" fill="#374151">Need additional $133K CI coverage (currently 60% of target)</text>
+
+                            <rect x="420" y="535" width="350" height="40" fill="white" stroke="#3B82F6" rx="6"/>
+                            <text x="430" y="550" font-size="10" font-weight="bold" fill="#1E40AF">💰 Suggested Action Plan</text>
+                            <text x="430" y="565" font-size="9" fill="#374151">1. Cancel ILP 2. Add $150K CI rider 3. Save difference</text>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Holistic Portfolio View:</strong> AI analyzes all client policies, identifies 27.8% premium overload, and recommends canceling ILP to achieve MoneySense compliance.
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-header">📄 Document Intelligence Module</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - Document Intelligence</text>
+                            <text x="650" y="35" fill="white" font-size="12">Agent: KARTIK</text>
+
+                            <!-- Upload Section -->
+                            <rect x="20" y="80" width="380" height="250" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="30" y="100" font-size="12" font-weight="bold">📤 Document Upload & Processing</text>
+
+                            <!-- Upload Box -->
+                            <rect x="30" y="110" width="360" height="100" fill="#F9FAFB" stroke="#D1D5DB" stroke-dasharray="5,5" rx="8"/>
+                            <text x="210" y="150" font-size="11" fill="#6B7280" text-anchor="middle">🖱️ Drag & Drop Files Here</text>
+                            <text x="210" y="167" font-size="9" fill="#9CA3AF" text-anchor="middle">or click to browse</text>
+                            <text x="210" y="182" font-size="8" fill="#9CA3AF" text-anchor="middle">Supported: PDF, JPG, PNG (max 10MB)</text>
+
+                            <!-- Recent Uploads -->
+                            <text x="30" y="230" font-size="10" font-weight="bold">📁 Recent Uploads (3)</text>
+
+                            <rect x="30" y="235" width="360" height="25" fill="#ECFDF5" stroke="#10B981" rx="4"/>
+                            <text x="40" y="250" font-size="9" fill="#065F46">✅ FHR_TanWeiMing_2024.pdf</text>
+                            <text x="270" y="250" font-size="8" fill="#6B7280">Processed • 2.3 MB</text>
+
+                            <rect x="30" y="265" width="360" height="25" fill="#ECFDF5" stroke="#10B981" rx="4"/>
+                            <text x="40" y="280" font-size="9" fill="#065F46">✅ NRIC_Front.jpg</text>
+                            <text x="270" y="280" font-size="8" fill="#6B7280">Verified • 1.1 MB</text>
+
+                            <rect x="30" y="295" width="360" height="25" fill="#FEF3C7" stroke="#F59E0B" rx="4"/>
+                            <text x="40" y="310" font-size="9" fill="#92400E">⏳ PaySlip_Nov2024.pdf</text>
+                            <text x="270" y="310" font-size="8" fill="#6B7280">Processing... 45%</text>
+
+                            <!-- AI Analysis Panel -->
+                            <rect x="420" y="80" width="360" height="250" fill="#F0F9FF" stroke="#0EA5E9" rx="8"/>
+                            <text x="430" y="100" font-size="12" font-weight="bold" fill="#0C4A6E">🤖 AI Document Analysis</text>
+
+                            <!-- Document Preview -->
+                            <rect x="430" y="110" width="340" height="100" fill="white" stroke="#D1D5DB" rx="6"/>
+                            <text x="440" y="125" font-size="9" font-weight="bold">📄 FHR_TanWeiMing_2024.pdf</text>
+
+                            <!-- Mock document lines -->
+                            <rect x="440" y="135" width="250" height="4" fill="#E5E7EB" rx="2"/>
+                            <rect x="440" y="143" width="300" height="4" fill="#E5E7EB" rx="2"/>
+                            <rect x="440" y="151" width="280" height="4" fill="#E5E7EB" rx="2"/>
+                            <rect x="440" y="159" width="260" height="4" fill="#E5E7EB" rx="2"/>
+                            <rect x="440" y="167" width="290" height="4" fill="#E5E7EB" rx="2"/>
+                            <rect x="440" y="175" width="240" height="4" fill="#E5E7EB" rx="2"/>
+                            <rect x="440" y="183" width="270" height="4" fill="#E5E7EB" rx="2"/>
+                            <rect x="440" y="191" width="255" height="4" fill="#E5E7EB" rx="2"/>
+
+                            <!-- Extracted Data -->
+                            <text x="430" y="228" font-size="10" font-weight="bold" fill="#0C4A6E">🔍 Extracted Information</text>
+
+                            <rect x="430" y="235" width="340" height="45" fill="white" rx="6"/>
+                            <text x="440" y="250" font-size="9" fill="#374151"><tspan font-weight="bold">Client Name:</tspan> Tan Wei Ming</text>
+                            <text x="440" y="263" font-size="9" fill="#374151"><tspan font-weight="bold">NRIC:</tspan> S8901234A</text>
+                            <text x="440" y="276" font-size="9" fill="#374151"><tspan font-weight="bold">Monthly Income:</tspan> $4,500</text>
+
+                            <rect x="430" y="285" width="340" height="35" fill="#ECFDF5" stroke="#10B981" rx="6"/>
+                            <text x="440" y="300" font-size="9" fill="#065F46" font-weight="bold">✅ Validation Status: PASSED</text>
+                            <text x="440" y="312" font-size="8" fill="#374151">All fields extracted with 98.5% confidence</text>
+
+                            <!-- Validation Results -->
+                            <rect x="20" y="350" width="760" height="230" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="30" y="370" font-size="12" font-weight="bold">✅ Automated Validation Checks</text>
+
+                            <!-- Check 1: Signature -->
+                            <rect x="30" y="385" width="360" height="60" fill="#ECFDF5" stroke="#10B981" rx="6"/>
+                            <text x="40" y="403" font-size="10" font-weight="bold" fill="#065F46">✅ Signature Verification</text>
+                            <text x="40" y="418" font-size="9" fill="#374151">Client signature detected and validated</text>
+                            <text x="40" y="433" font-size="8" fill="#6B7280">Match confidence: 96.3% • Location: Page 1, Bottom</text>
+
+                            <!-- Check 2: NRIC -->
+                            <rect x="410" y="385" width="360" height="60" fill="#ECFDF5" stroke="#10B981" rx="6"/>
+                            <text x="420" y="403" font-size="10" font-weight="bold" fill="#065F46">✅ NRIC Verification</text>
+                            <text x="420" y="418" font-size="9" fill="#374151">NRIC S8901234A verified against ICA database</text>
+                            <text x="420" y="433" font-size="8" fill="#6B7280">Name match: ✓ • Age match: ✓ • Checksum: Valid</text>
+
+                            <!-- Check 3: Income -->
+                            <rect x="30" y="455" width="360" height="60" fill="#FEF3C7" stroke="#F59E0B" rx="6"/>
+                            <text x="40" y="473" font-size="10" font-weight="bold" fill="#92400E">⚠️ Income Document Cross-Check</text>
+                            <text x="40" y="488" font-size="9" fill="#374151">FHR states $4,500, payslip shows $4,200</text>
+                            <text x="40" y="503" font-size="8" fill="#D97706">💡 Recommendation: Request latest 3 months payslips</text>
+
+                            <!-- Check 4: Completeness -->
+                            <rect x="410" y="455" width="360" height="60" fill="#ECFDF5" stroke="#10B981" rx="6"/>
+                            <text x="420" y="473" font-size="10" font-weight="bold" fill="#065F46">✅ Document Completeness</text>
+                            <text x="420" y="488" font-size="9" fill="#374151">All required fields present (18/18)</text>
+                            <text x="420" y="503" font-size="8" fill="#6B7280">OCR accuracy: 98.5% • Manual review: Not needed</text>
+
+                            <!-- Processing Stats -->
+                            <rect x="30" y="530" width="740" height="40" fill="#DBEAFE" stroke="#3B82F6" rx="6"/>
+                            <text x="40" y="548" font-size="10" fill="#1E40AF" font-weight="bold">⚡ Processing Statistics</text>
+                            <text x="40" y="562" font-size="9" fill="#374151">Documents processed: 127 | Avg processing time: 8.3 seconds | Error rate: 1.2% | Manual reviews saved: 89%</text>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Intelligent Document Processing:</strong> AI extracts data with 98.5% accuracy, validates signatures, cross-checks NRIC, and detects income discrepancies automatically.
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-header">🔗 Knowledge Graph Visualization</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - Knowledge Graph</text>
+                            <text x="650" y="35" fill="white" font-size="12">Agent: KARTIK</text>
+
+                            <!-- Search Bar -->
+                            <rect x="20" y="80" width="760" height="40" fill="white" stroke="#D1D5DB" rx="8"/>
+                            <text x="30" y="103" font-size="11" fill="#9CA3AF">🔍 Search compliance rules, relationships, or patterns...</text>
+                            <rect x="690" y="88" width="70" height="24" fill="#C5193B" rx="6"/>
+                            <text x="720" y="104" fill="white" font-size="10" text-anchor="middle">Search</text>
+
+                            <!-- Graph Canvas -->
+                            <rect x="20" y="135" width="760" height="380" fill="#F9FAFB" stroke="#E5E7EB" rx="8"/>
+
+                            <!-- Central Client Node -->
+                            <circle cx="400" cy="320" r="45" fill="#C5193B"/>
+                            <text x="400" y="318" fill="white" font-size="10" font-weight="bold" text-anchor="middle">👤 CLIENT</text>
+                            <text x="400" y="332" fill="white" font-size="8" text-anchor="middle">Tan Wei Ming</text>
+
+                            <!-- Profile Node -->
+                            <circle cx="250" cy="200" r="35" fill="#3B82F6"/>
+                            <text x="250" y="198" fill="white" font-size="9" font-weight="bold" text-anchor="middle">📊 PROFILE</text>
+                            <text x="250" y="210" fill="white" font-size="7" text-anchor="middle">Age: 35</text>
+                            <line x1="270" y1="230" x2="375" y2="290" stroke="#6B7280" stroke-width="2"/>
+                            <text x="310" y="250" font-size="8" fill="#6B7280">HAS</text>
+
+                            <!-- Income Node -->
+                            <circle cx="150" cy="280" r="30" fill="#10B981"/>
+                            <text x="150" y="278" fill="white" font-size="8" font-weight="bold" text-anchor="middle">💰 INCOME</text>
+                            <text x="150" y="290" fill="white" font-size="7" text-anchor="middle">$4,500</text>
+                            <line x1="185" y1="290" x2="355" y2="310" stroke="#6B7280" stroke-width="2"/>
+                            <text x="260" y="295" font-size="8" fill="#6B7280">EARNS</text>
+
+                            <!-- Policy Node 1 -->
+                            <circle cx="550" cy="200" r="35" fill="#8B5CF6"/>
+                            <text x="550" y="198" fill="white" font-size="8" font-weight="bold" text-anchor="middle">📋 POLICY</text>
+                            <text x="550" y="210" fill="white" font-size="7" text-anchor="middle">Family Protect</text>
+                            <line x1="430" y1="290" x2="525" y2="225" stroke="#6B7280" stroke-width="2"/>
+                            <text x="470" y="250" font-size="8" fill="#6B7280">OWNS</text>
+
+                            <!-- Policy Node 2 -->
+                            <circle cx="620" cy="340" r="30" fill="#8B5CF6"/>
+                            <text x="620" y="338" fill="white" font-size="8" font-weight="bold" text-anchor="middle">📋 POLICY</text>
+                            <text x="620" y="350" fill="white" font-size="7" text-anchor="middle">ILP Shield</text>
+                            <line x1="445" y1="325" x2="590" y2="335" stroke="#6B7280" stroke-width="2"/>
+                            <text x="510" y="323" font-size="8" fill="#6B7280">OWNS</text>
+
+                            <!-- FHR Node -->
+                            <circle cx="400" cy="450" r="30" fill="#F59E0B"/>
+                            <text x="400" y="448" fill="white" font-size="8" font-weight="bold" text-anchor="middle">📄 FHR</text>
+                            <text x="400" y="460" fill="white" font-size="7" text-anchor="middle">FHR-2025-001</text>
+                            <line x1="400" y1="365" x2="400" y2="420" stroke="#6B7280" stroke-width="2"/>
+                            <text x="410" y="390" font-size="8" fill="#6B7280">SUBMITS</text>
+
+                            <!-- Rule Node 1 -->
+                            <circle cx="250" cy="400" r="30" fill="#EF4444"/>
+                            <text x="250" y="398" fill="white" font-size="8" font-weight="bold" text-anchor="middle">⚖️ RULE</text>
+                            <text x="250" y="410" fill="white" font-size="7" text-anchor="middle">15% Limit</text>
+                            <line x1="280" y1="410" x2="370" y2="440" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,5"/>
+                            <text x="315" y="418" font-size="8" fill="#EF4444">VIOLATES</text>
+
+                            <!-- Rule Node 2 -->
+                            <circle cx="550" cy="450" r="30" fill="#10B981"/>
+                            <text x="550" y="448" fill="white" font-size="8" font-weight="bold" text-anchor="middle">⚖️ RULE</text>
+                            <text x="550" y="460" fill="white" font-size="7" text-anchor="middle">9x Coverage</text>
+                            <line x1="430" y1="450" x2="520" y2="450" stroke="#10B981" stroke-width="2"/>
+                            <text x="470" y="445" font-size="8" fill="#10B981">SATISFIES</text>
+
+                            <!-- Agent Node -->
+                            <circle cx="250" cy="320" r="25" fill="#64748B"/>
+                            <text x="250" y="320" fill="white" font-size="8" font-weight="bold" text-anchor="middle">👨‍💼</text>
+                            <text x="250" y="332" fill="white" font-size="6" text-anchor="middle">Agent</text>
+                            <line x1="275" y1="320" x2="355" y2="320" stroke="#6B7280" stroke-width="1" stroke-dasharray="3,3"/>
+                            <text x="310" y="315" font-size="7" fill="#6B7280">ADVISED BY</text>
+
+                            <!-- Supervisor Node -->
+                            <circle cx="550" cy="320" r="25" fill="#64748B"/>
+                            <text x="550" y="320" fill="white" font-size="8" font-weight="bold" text-anchor="middle">👔</text>
+                            <text x="550" y="332" fill="white" font-size="6" text-anchor="middle">Supervisor</text>
+                            <line x1="445" y1="320" x2="525" y2="320" stroke="#6B7280" stroke-width="1" stroke-dasharray="3,3"/>
+                            <text x="480" y="315" font-size="7" fill="#6B7280">REVIEWED BY</text>
+
+                            <!-- Legend -->
+                            <rect x="30" y="145" width="150" height="130" fill="white" stroke="#D1D5DB" rx="6"/>
+                            <text x="40" y="162" font-size="10" font-weight="bold">🗺️ Legend</text>
+
+                            <circle cx="50" cy="180" r="8" fill="#C5193B"/>
+                            <text x="65" y="184" font-size="8">Client</text>
+
+                            <circle cx="50" cy="200" r="8" fill="#3B82F6"/>
+                            <text x="65" y="204" font-size="8">Profile Data</text>
+
+                            <circle cx="50" cy="220" r="8" fill="#8B5CF6"/>
+                            <text x="65" y="224" font-size="8">Policy</text>
+
+                            <circle cx="50" cy="240" r="8" fill="#F59E0B"/>
+                            <text x="65" y="244" font-size="8">FHR Document</text>
+
+                            <circle cx="50" cy="260" r="8" fill="#EF4444"/>
+                            <text x="65" y="264" font-size="8">Rule Violation</text>
+
+                            <!-- Stats Panel -->
+                            <rect x="600" y="145" width="170" height="130" fill="white" stroke="#D1D5DB" rx="6"/>
+                            <text x="610" y="162" font-size="10" font-weight="bold">📊 Graph Stats</text>
+
+                            <text x="610" y="182" font-size="8" fill="#374151">Nodes: 247</text>
+                            <text x="610" y="197" font-size="8" fill="#374151">Relationships: 1,842</text>
+                            <text x="610" y="212" font-size="8" fill="#374151">Rules: 53</text>
+                            <text x="610" y="227" font-size="8" fill="#374151">Clients: 124</text>
+                            <text x="610" y="242" font-size="8" fill="#374151">Policies: 487</text>
+                            <text x="610" y="257" font-size="8" fill="#374151">Query time: 0.3s</text>
+
+                            <!-- Insights Panel -->
+                            <rect x="20" y="530" width="760" height="55" fill="#F0F9FF" stroke="#0EA5E9" rx="8"/>
+                            <text x="30" y="548" font-size="10" font-weight="bold" fill="#0C4A6E">🤖 AI Pattern Detection</text>
+                            <text x="30" y="563" font-size="9" fill="#374151">Found 3 similar clients with premium overload issues. Common pattern: Multiple ILP policies purchased within 6 months.</text>
+                            <text x="30" y="577" font-size="9" fill="#374151">Recommendation: Flag ILP proposals for clients with existing term life coverage exceeding 10% of income.</text>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Visual Compliance Relationships:</strong> Interactive knowledge graph shows connections between clients, policies, rules, and violations. AI detects patterns across 247 nodes.
+                    </div>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-header">📜 Regulatory Intelligence Hub</div>
+                    <div class="screenshot-image">
+                        <svg viewBox="0 0 800 600" style="width: 100%; height: 100%;">
+                            <!-- Header -->
+                            <rect x="0" y="0" width="800" height="60" fill="#C5193B"/>
+                            <text x="20" y="35" fill="white" font-size="16" font-weight="bold">🧠 CompliSense AI - Regulatory Intelligence</text>
+                            <text x="650" y="35" fill="white" font-size="12">Agent: KARTIK</text>
+
+                            <!-- Alert Banner -->
+                            <rect x="20" y="80" width="760" height="45" fill="#FEF2F2" stroke="#EF4444" rx="8"/>
+                            <text x="40" y="100" fill="#DC2626" font-size="11" font-weight="bold">🚨 NEW: MAS Circular Updated (Dec 10, 2024)</text>
+                            <text x="40" y="115" fill="#6B7280" font-size="9">Updated guidelines on investment-linked policies for seniors. Review required for 12 pending proposals.</text>
+
+                            <!-- Recent Updates -->
+                            <rect x="20" y="140" width="380" height="240" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="30" y="160" font-size="12" font-weight="bold">📋 Recent Regulatory Updates</text>
+
+                            <!-- Update 1 -->
+                            <rect x="30" y="170" width="360" height="50" fill="#FEF2F2" stroke="#EF4444" rx="6"/>
+                            <rect x="35" y="175" width="4" height="40" fill="#EF4444" rx="2"/>
+                            <text x="45" y="186" font-size="10" font-weight="bold" fill="#DC2626">MAS Circular 2024-12</text>
+                            <text x="45" y="200" font-size="8" fill="#6B7280">ILP restrictions for age 65+ clients</text>
+                            <text x="45" y="213" font-size="7" fill="#9CA3AF">Published: Dec 10, 2024 • Impact: High</text>
+                            <rect x="320" y="178" width="60" height="18" fill="#EF4444" rx="9"/>
+                            <text x="345" y="190" fill="white" font-size="8" text-anchor="middle">URGENT</text>
+
+                            <!-- Update 2 -->
+                            <rect x="30" y="225" width="360" height="50" fill="#FEF3C7" stroke="#F59E0B" rx="6"/>
+                            <rect x="35" y="230" width="4" height="40" fill="#F59E0B" rx="2"/>
+                            <text x="45" y="241" font-size="10" font-weight="bold" fill="#D97706">MoneySense Guideline 4.2</text>
+                            <text x="45" y="255" font-size="8" fill="#6B7280">Premium affordability clarification</text>
+                            <text x="45" y="268" font-size="7" fill="#9CA3AF">Published: Nov 28, 2024 • Impact: Medium</text>
+                            <rect x="320" y="233" width="60" height="18" fill="#F59E0B" rx="9"/>
+                            <text x="345" y="245" fill="white" font-size="8" text-anchor="middle">REVIEW</text>
+
+                            <!-- Update 3 -->
+                            <rect x="30" y="280" width="360" height="50" fill="#DBEAFE" stroke="#3B82F6" rx="6"/>
+                            <rect x="35" y="285" width="4" height="40" fill="#3B82F6" rx="2"/>
+                            <text x="45" y="296" font-size="10" font-weight="bold" fill="#1E40AF">CMFAS Update 2024-Q4</text>
+                            <text x="45" y="310" font-size="8" fill="#6B7280">New training requirements for ILP sales</text>
+                            <text x="45" y="323" font-size="7" fill="#9CA3AF">Published: Nov 15, 2024 • Impact: Low</text>
+                            <rect x="320" y="288" width="60" height="18" fill="#3B82F6" rx="9"/>
+                            <text x="345" y="300" fill="white" font-size="8" text-anchor="middle">INFO</text>
+
+                            <!-- Update 4 -->
+                            <rect x="30" y="335" width="360" height="35" fill="#F3F4F6" stroke="#D1D5DB" rx="6"/>
+                            <rect x="35" y="340" width="4" height="25" fill="#6B7280" rx="2"/>
+                            <text x="45" y="353" font-size="9" font-weight="bold" fill="#374151">AIA Advisory Manual v3.2</text>
+                            <text x="45" y="365" font-size="7" fill="#9CA3AF">Published: Oct 30, 2024</text>
+                            <rect x="320" y="343" width="60" height="18" fill="#6B7280" rx="9"/>
+                            <text x="345" y="355" fill="white" font-size="7" text-anchor="middle">INTERNAL</text>
+
+                            <!-- Rule Library -->
+                            <rect x="420" y="140" width="360" height="240" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="430" y="160" font-size="12" font-weight="bold">📚 MoneySense Rule Library</text>
+
+                            <!-- Search -->
+                            <rect x="430" y="168" width="340" height="28" fill="#F9FAFB" stroke="#D1D5DB" rx="6"/>
+                            <text x="438" y="185" font-size="9" fill="#9CA3AF">🔍 Search rules...</text>
+
+                            <!-- Rule Categories -->
+                            <text x="430" y="215" font-size="10" font-weight="bold" fill="#374151">Categories (6)</text>
+
+                            <rect x="430" y="223" width="165" height="35" fill="#ECFDF5" stroke="#10B981" rx="6"/>
+                            <text x="440" y="238" font-size="9" fill="#065F46" font-weight="bold">💰 Premium Affordability</text>
+                            <text x="440" y="251" font-size="7" fill="#6B7280">12 rules</text>
+
+                            <rect x="605" y="223" width="165" height="35" fill="#DBEAFE" stroke="#3B82F6" rx="6"/>
+                            <text x="615" y="238" font-size="9" fill="#1E40AF" font-weight="bold">🛡️ Coverage Adequacy</text>
+                            <text x="615" y="251" font-size="7" fill="#6B7280">8 rules</text>
+
+                            <rect x="430" y="263" width="165" height="35" fill="#FEF3C7" stroke="#F59E0B" rx="6"/>
+                            <text x="440" y="278" font-size="9" fill="#92400E" font-weight="bold">🎯 Life Stage Rules</text>
+                            <text x="440" y="291" font-size="7" fill="#6B7280">15 rules</text>
+
+                            <rect x="605" y="263" width="165" height="35" fill="#F3E8FF" stroke="#8B5CF6" rx="6"/>
+                            <text x="615" y="278" font-size="9" fill="#6B21A8" font-weight="bold">📊 Product Suitability</text>
+                            <text x="615" y="291" font-size="7" fill="#6B7280">10 rules</text>
+
+                            <rect x="430" y="303" width="165" height="35" fill="#FEF2F2" stroke="#EF4444" rx="6"/>
+                            <text x="440" y="318" font-size="9" fill="#DC2626" font-weight="bold">⚖️ Disclosure Rules</text>
+                            <text x="440" y="331" font-size="7" fill="#6B7280">7 rules</text>
+
+                            <rect x="605" y="303" width="165" height="35" fill="#F0F9FF" stroke="#0EA5E9" rx="6"/>
+                            <text x="615" y="318" font-size="9" fill="#0C4A6E" font-weight="bold">🔄 Review Cycles</text>
+                            <text x="615" y="331" font-size="7" fill="#6B7280">5 rules</text>
+
+                            <!-- Quick Stats -->
+                            <rect x="430" y="348" width="340" height="22" fill="#F9FAFB" rx="4"/>
+                            <text x="438" y="362" font-size="8" fill="#6B7280">Total rules: 57 • Last updated: Dec 10, 2024 • All rules active</text>
+
+                            <!-- Impact Analysis -->
+                            <rect x="20" y="395" width="380" height="185" fill="#F0F9FF" stroke="#0EA5E9" rx="8"/>
+                            <text x="30" y="415" font-size="12" font-weight="bold" fill="#0C4A6E">📊 Impact Analysis: MAS Circular 2024-12</text>
+
+                            <rect x="30" y="425" width="360" height="50" fill="white" stroke="#EF4444" rx="6"/>
+                            <text x="40" y="440" font-size="10" font-weight="bold" fill="#DC2626">🚨 Immediate Actions Required</text>
+                            <text x="40" y="454" font-size="8" fill="#374151">• Review 12 pending ILP proposals for clients age 65+</text>
+                            <text x="40" y="467" font-size="8" fill="#374151">• Update 3 active FHR forms with new disclosures</text>
+
+                            <rect x="30" y="480" width="360" height="40" fill="white" stroke="#F59E0B" rx="6"/>
+                            <text x="40" y="495" font-size="9" font-weight="bold" fill="#D97706">⚠️ Affected Products (4)</text>
+                            <text x="40" y="508" font-size="8" fill="#374151">Investment Shield ILP • Prime Protect ILP • Wealth Builder</text>
+
+                            <rect x="30" y="525" width="360" height="45" fill="white" stroke="#10B981" rx="6"/>
+                            <text x="40" y="540" font-size="9" font-weight="bold" fill="#059669">✅ Compliance Actions</text>
+                            <text x="40" y="553" font-size="8" fill="#374151">• AI rules engine updated automatically</text>
+                            <text x="40" y="565" font-size="8" fill="#374151">• All agents notified via email • Training scheduled</text>
+
+                            <!-- Compliance Calendar -->
+                            <rect x="420" y="395" width="360" height="185" fill="white" stroke="#E5E7EB" rx="8"/>
+                            <text x="430" y="415" font-size="12" font-weight="bold">📅 Compliance Calendar</text>
+
+                            <!-- Calendar Entry 1 -->
+                            <rect x="430" y="425" width="340" height="35" fill="#FEF2F2" stroke="#EF4444" rx="6"/>
+                            <rect x="435" y="430" width="50" height="25" fill="#EF4444" rx="4"/>
+                            <text x="455" y="442" fill="white" font-size="9" font-weight="bold" text-anchor="middle">DEC</text>
+                            <text x="455" y="453" fill="white" font-size="7" text-anchor="middle">15</text>
+                            <text x="495" y="439" font-size="9" font-weight="bold" fill="#DC2626">MAS Circular 2024-12</text>
+                            <text x="495" y="452" font-size="7" fill="#6B7280">Effective date • Compliance mandatory</text>
+
+                            <!-- Calendar Entry 2 -->
+                            <rect x="430" y="465" width="340" height="35" fill="#FEF3C7" stroke="#F59E0B" rx="6"/>
+                            <rect x="435" y="470" width="50" height="25" fill="#F59E0B" rx="4"/>
+                            <text x="455" y="482" fill="white" font-size="9" font-weight="bold" text-anchor="middle">DEC</text>
+                            <text x="455" y="493" fill="white" font-size="7" text-anchor="middle">20</text>
+                            <text x="495" y="479" font-size="9" font-weight="bold" fill="#D97706">Agent Training Session</text>
+                            <text x="495" y="492" font-size="7" fill="#6B7280">ILP guidelines update • Mandatory attendance</text>
+
+                            <!-- Calendar Entry 3 -->
+                            <rect x="430" y="505" width="340" height="35" fill="#DBEAFE" stroke="#3B82F6" rx="6"/>
+                            <rect x="435" y="510" width="50" height="25" fill="#3B82F6" rx="4"/>
+                            <text x="455" y="522" fill="white" font-size="9" font-weight="bold" text-anchor="middle">JAN</text>
+                            <text x="455" y="533" fill="white" font-size="7" text-anchor="middle">01</text>
+                            <text x="495" y="519" font-size="9" font-weight="bold" fill="#1E40AF">Q1 2025 Compliance Review</text>
+                            <text x="495" y="532" font-size="7" fill="#6B7280">Annual policy review • All agents</text>
+
+                            <rect x="430" y="548" width="340" height="22" fill="#ECFDF5" stroke="#10B981" rx="4"/>
+                            <text x="440" y="562" font-size="8" fill="#059669">✅ System automatically synced with MAS regulatory calendar</text>
+                        </svg>
+                    </div>
+                    <div class="screenshot-description">
+                        <strong>Always Up-to-Date:</strong> Tracks MAS circulars, MoneySense updates, and internal guidelines. AI identifies 12 proposals requiring immediate review after new regulation.
+                    </div>
+                </div>
             </div>
 
             <!-- Before/After Comparison -->
@@ -1162,6 +1801,12 @@
                 <a href="copilot.html" class="demo-link" target="_blank">🤖 Chat with AI Copilot</a>
                 <a href="products.html" class="demo-link" target="_blank">🎯 See Product Recommendations</a>
                 <a href="supervisor.html" class="demo-link" target="_blank">👨‍💼 View Supervisor Dashboard</a>
+                <a href="analytics.html" class="demo-link" target="_blank">📊 Explore Analytics Dashboard</a>
+                <a href="portfolio.html" class="demo-link" target="_blank">📱 View Client Portfolio</a>
+                <a href="documents.html" class="demo-link" target="_blank">📄 Try Document Intelligence</a>
+                <a href="graph.html" class="demo-link" target="_blank">🔗 See Knowledge Graph</a>
+                <a href="regulatory.html" class="demo-link" target="_blank">📜 Check Regulatory Hub</a>
+                <a href="index.html" class="demo-link" target="_blank">🏠 Main Dashboard</a>
             </div>
 
             <div class="highlight-box" style="margin-top: 30px; background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3);">
